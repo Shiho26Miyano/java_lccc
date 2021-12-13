@@ -10,20 +10,24 @@ public class lc_20_Valid_Parentheses {
         mappings.put('(', ')');
         mappings.put('{', '}');
         mappings.put('[', ']');
-        for (int i = 0; i < s.length(); i++)
-        {
+        for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
             if (mappings.containsKey(ch)) {
                 run_stack.push(ch);
+                System.out.println(run_stack);
+                System.out.println("---------");
+
+
             }
             else if (run_stack.isEmpty() || mappings.get(run_stack.pop()) != ch) {
+                run_stack.pop();
                 return false;
             }
         }
         return run_stack.isEmpty();
     }
     public static void main(String[] args){
-        String x = "{}[[]]";
+        String x = "{}(";
         System.out.println(isValid(x));
 
     }
