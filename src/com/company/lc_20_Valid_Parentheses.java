@@ -20,14 +20,13 @@ public class lc_20_Valid_Parentheses {
 
             }
             else if (run_stack.isEmpty() || mappings.get(run_stack.pop()) != ch) {
-                run_stack.pop();
                 return false;
             }
         }
         return run_stack.isEmpty();
     }
     public static void main(String[] args){
-        String x = "{}(";
+        String x = "{}";
         System.out.println(isValid(x));
 
     }
