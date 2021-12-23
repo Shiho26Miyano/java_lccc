@@ -24,6 +24,7 @@ public class lc_696_Count_Binary_Substrings {
         String x = "00110011";
         System.out.println(countBinarySubstrings(x));
 
+
     }
 
 }
