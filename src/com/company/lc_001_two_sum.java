@@ -15,7 +15,7 @@ public class lc_001_two_sum {
             }
             map.put(nums[i], i);
         }
-        return nums;
+        return null; // In case there is no solution, we will just return null
     }
 
     public static void main(String[] args){
