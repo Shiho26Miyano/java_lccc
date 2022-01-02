@@ -9,16 +9,9 @@ public class lc_049_Group_Anagrams {
         for (String s : strs) {
             char[] ca = s.toCharArray();
             Arrays.sort(ca);
-            //System.out.println(s);
-            //System.out.println(ca);
-            //for (char c : ca) {
-            //    System.out.println(c);
-            // }
-
             String key = String.valueOf(ca);
-            if (!ans.containsKey(key)) ans.put(key, new ArrayList());
-            ans.get(key).add(s);
-        }
+            if (!ans.containsKey(key)) ans.put(key, new ArrayList()); // if the key not exist, then create new ArrayList
+            ans.get(key).add(s); //adds value to list.
 
         return new ArrayList(ans.values());
     }
