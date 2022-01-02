@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.HashMap; // import the HashMap class
 import java.util.Map;
+import java.util.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
