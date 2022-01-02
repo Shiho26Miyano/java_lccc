@@ -9,10 +9,17 @@ public class lc_049_Group_Anagrams {
         for (String s : strs) {
             char[] ca = s.toCharArray();
             Arrays.sort(ca);
+            //System.out.println(s);
+            //System.out.println(ca);
+            //for (char c : ca) {
+            //    System.out.println(c);
+            // }
+
             String key = String.valueOf(ca);
             if (!ans.containsKey(key)) ans.put(key, new ArrayList());
             ans.get(key).add(s);
         }
+
         return new ArrayList(ans.values());
     }
     public static void main(String[] args){
@@ -23,3 +30,7 @@ public class lc_049_Group_Anagrams {
 
     }
 }
+
+// Maintain a map ans : {String -> List} where each key \text{K}K is a sorted string,
+// and each value is the list of strings from the initial input that when sorted,
+// are equal to \text{K}K.
