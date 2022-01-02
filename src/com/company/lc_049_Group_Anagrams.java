@@ -30,7 +30,7 @@ public class lc_049_Group_Anagrams {
 
     }
 }
-
+// Approach: Categorize by Sorted String
 // Maintain a map ans : {String -> List} where each key \text{K}K is a sorted string,
 // and each value is the list of strings from the initial input that when sorted,
 // are equal to \text{K}K.
