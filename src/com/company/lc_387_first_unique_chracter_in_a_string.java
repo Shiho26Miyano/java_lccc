@@ -10,7 +10,7 @@ public class lc_387_first_unique_chracter_in_a_string {
             char c = s.charAt(i);
             count.put(c, count.getOrDefault(c, 0) + 1);
         }
-
+        System.out.println(count);
         // find the index
         for (int i = 0; i < n; i++) {
             if (count.get(s.charAt(i)) == 1)
@@ -21,7 +21,7 @@ public class lc_387_first_unique_chracter_in_a_string {
 
 
     public static void main(String[] args) {
-        String s = "cddddatfdsafffff";
+        String s = "ccccccddddatfdsafffff";
 
         int result = firstUniqChar(s);
         System.out.println(result);
