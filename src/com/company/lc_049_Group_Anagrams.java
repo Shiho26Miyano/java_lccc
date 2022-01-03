@@ -11,7 +11,8 @@ public class lc_049_Group_Anagrams {
             Arrays.sort(ca);
             String key = String.valueOf(ca);
             if (!ans.containsKey(key)) ans.put(key, new ArrayList()); // if the key not exist, then create new ArrayList
-            ans.get(key).add(s); //adds value to list.
+            ans.get(key).add(s); //
+        }
 
         return new ArrayList(ans.values());
     }
