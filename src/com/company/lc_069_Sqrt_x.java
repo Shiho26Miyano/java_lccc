@@ -27,7 +27,7 @@ public class lc_069_Sqrt_x {
 
     public static void main(String[] args){
         //int[] intArray = new int[]{2,7,11,15};
-        int target = 32;
+        int target = 7;
         int result = mySqrt(target);
         System.out.println(result);
     }
