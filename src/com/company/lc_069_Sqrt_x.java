@@ -16,7 +16,6 @@ public class lc_069_Sqrt_x {
             else if (num < x) left = pivot + 1;
             else return pivot;
         }
-
         return right;
     }
 
