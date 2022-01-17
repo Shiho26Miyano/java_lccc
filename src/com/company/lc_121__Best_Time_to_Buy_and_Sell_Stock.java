@@ -4,6 +4,7 @@ public class lc_121__Best_Time_to_Buy_and_Sell_Stock {
 
     public static int maxProfit(int[] prices) {
         int minPrice = Integer.MAX_VALUE;
+        System.out.println(minPrice);
         int maxProfit = 0;
         for (int price : prices) {
             if (price < minPrice) minPrice = price;
