@@ -16,12 +16,24 @@ public class lc_53_Maximum_Subarray {
     }
 
 
-    public static void main(String[] args){
+    public static int maxSubArray2(int[] nums) {
+        int subsum = nums[0];
+        int maxsum = nums[0];
+        for (int n : nums) {
+            subsum = Math.max(subsum + n, n);
+            maxsum = Math.max(subsum, maxsum);
+        }
+        return maxsum;
+    }
+
+        public static void main(String[] args){
         int[] nums1 = new int[]{-300,2,-200, 250};
         int[] nums2 = new int[]{2,2,3};
         //int target = 7;
         int result = maxSubArray(nums1);
+        int result2 = maxSubArray2(nums1);
         System.out.println(result);
+        System.out.println(result2);
     }
 
 
