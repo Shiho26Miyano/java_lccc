@@ -11,7 +11,7 @@ public class lc_349_Intersection_of_Two_Arrays {
 
         int [] output = new int[set1.size()];
         int idx = 0;
-        for (int s : set1) output[idx++] = s;
+        for (Integer s : set1) output[idx++] = s;
         return output;
     }
 
