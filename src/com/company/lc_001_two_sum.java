@@ -24,5 +24,5 @@ public class lc_001_two_sum {
         int target = 5;
         int[] result = twoSum(intArray, target);
         System.out.println(Arrays.toString(result));
-            }
+    }
 }

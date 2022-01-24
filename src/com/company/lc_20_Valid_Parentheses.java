@@ -14,19 +14,17 @@ public class lc_20_Valid_Parentheses {
             char ch = s.charAt(i);
             if (mappings.containsKey(ch)) {
                 run_stack.push(ch);
-                System.out.println(run_stack);
-                System.out.println("---------");
-
-
             }
             else if (run_stack.isEmpty() || mappings.get(run_stack.pop()) != ch) {
                 return false;
             }
         }
         return run_stack.isEmpty();
+
     }
+
     public static void main(String[] args){
-        String x = "{}";
+        String x = "[{}]()[]";
         System.out.println(isValid(x));
 
     }
