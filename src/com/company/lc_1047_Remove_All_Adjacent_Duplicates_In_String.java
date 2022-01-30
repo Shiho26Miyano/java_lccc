@@ -3,18 +3,25 @@ import java.util.*;
 
 public class lc_1047_Remove_All_Adjacent_Duplicates_In_String {
     public static String removeDuplicates(String S) {
+        Stack<Integer> stack = new Stack<>();
+        char[] chars = S.toCharArray();
+        for (int i = 0; i < S.length(); i++) {
+            if (stack.isEmpty() || chars[stack.peek()] != chars[i]) {
+                stack.push(i);
+            } else {
+                chars[i] = '-';
+                chars[stack.pop()] = '-';
+            }
+        }
         StringBuilder sb = new StringBuilder();
-        int sbLength = 0;
-        for(char character : S.toCharArray()) {
-            if (sbLength != 0 && character == sb.charAt(sbLength - 1))
-                sb.deleteCharAt(sbLength-- - 1);
-            else {
-                sb.append(character);
-                sbLength++;
+        for (char c : chars) {
+            if (c != '-') {
+                sb.append(c);
             }
         }
         return sb.toString();
     }
+
 
 
     public static void main(String[] args){
