@@ -13,6 +13,8 @@ public class lc_1047_Remove_All_Adjacent_Duplicates_In_String {
                 chars[stack.pop()] = '-';
             }
         }
+        System.out.println(Arrays.toString(stack.toArray()));
+        System.out.println(Arrays.toString(chars));
         StringBuilder sb = new StringBuilder();
         for (char c : chars) {
             if (c != '-') {
