@@ -8,10 +8,12 @@ public class lc_71_Simplify_Path {
         Stack<String> stack = new Stack<String>();
         String[] components = path.split("/");
 
+
         // Split the input string on "/" as the delimiter
         // and process each portion one by one
         for (String directory : components) {
-
+            System.out.println(stack);
+            System.out.println(directory);
             // A no-op for a "." or an empty string
             if (directory.equals(".") || directory.isEmpty()) {
                 continue;
@@ -26,9 +28,11 @@ public class lc_71_Simplify_Path {
 
                 // Finally, a legitimate directory name, so we add it
                 // to our stack
-                stack.add(directory);
+                stack.push(directory);
+
             }
         }
+        System.out.println(stack);
 
         // Stich together all the directory names together
         StringBuilder result = new StringBuilder();
@@ -41,7 +45,7 @@ public class lc_71_Simplify_Path {
     }
 
     public static void main(String[] args){
-        String s =  "/home/";
+        String s =  "/a/./b/../../c/";
         //int[] nums2 = new int[]{2,2,3};
         //int target = 7;
         String result = simplifyPath(s);
