@@ -14,6 +14,8 @@ public class lc_739_Daily_Temperatures {
             while (!stack.isEmpty() && temperatures[stack.peek()] < currentTemp) {
                 int prevDay = stack.pop();
                 answer[prevDay] = currDay - prevDay;
+                System.out.println("now" + (currDay));
+                System.out.println((prevDay));
             }
             stack.push(currDay);
         }
