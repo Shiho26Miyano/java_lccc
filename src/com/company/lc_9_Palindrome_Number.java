@@ -8,7 +8,9 @@ public class lc_9_Palindrome_Number {
         int result = 0;
         while (x > 0) {
             result = result * 10 + x % 10;
+            System.out.println(result);
             x /= 10;
+            System.out.println(x);
         }
         return result == y;
     }
@@ -19,7 +21,7 @@ public class lc_9_Palindrome_Number {
     public static void main(String[] args){
         //String s = "addccggazfeezddh";
         //int[] nums2 = new int[]{2,2,3};
-        int target = 676;
+        int target = 10001;
        //char[] t = new char[]{'h','e','l','l','o'};
         boolean t = isPalindrome(target);
         System.out.println(t);
