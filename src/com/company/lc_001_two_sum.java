@@ -1,11 +1,5 @@
 package com.company;
-
-import java.util.HashMap; // import the HashMap class
-import java.util.Map;
 import java.util.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 public class lc_001_two_sum {
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
