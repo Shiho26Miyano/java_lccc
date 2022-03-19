@@ -20,7 +20,7 @@ public class lc_696_Count_Binary_Substrings {
         }
         return ans + Math.min(prev, cur);
     }
-    
+
     public static void main(String[] args){
         String x = "00110011";
         System.out.println(countBinarySubstrings(x));
