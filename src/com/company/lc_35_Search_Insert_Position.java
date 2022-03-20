@@ -6,7 +6,6 @@ public class lc_35_Search_Insert_Position {
         int pivot, left = 0, right = nums.length - 1;
         while (left <= right) {
             pivot = left + (right - left) / 2;
-            System.out.println(nums[pivot]);
             if (nums[pivot] == target) return pivot;
             if (target < nums[pivot]) right = pivot - 1;
             else left = pivot + 1;
@@ -17,8 +16,8 @@ public class lc_35_Search_Insert_Position {
 
 
     public static void main(String[] args){
-        int[] intArray = new int[]{1,3,5,6,7};
-        int target = 4;
+        int[] intArray = new int[]{9,3,5,6,7};
+        int target = 5;
         int result = searchInsert(intArray, target);
         System.out.println(result);
     }
