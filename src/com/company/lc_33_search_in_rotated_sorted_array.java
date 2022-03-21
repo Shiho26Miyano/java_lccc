@@ -19,7 +19,6 @@ public class lc_33_search_in_rotated_sorted_array {
         return -1;
     }
 
-
     public static void main(String[] args) {
         int[] intArray = new int[]{1, 3, 5, 6, 7};
         int target = 6;
