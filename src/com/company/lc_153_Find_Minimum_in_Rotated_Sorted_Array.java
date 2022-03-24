@@ -28,7 +28,7 @@ public class lc_153_Find_Minimum_in_Rotated_Sorted_Array {
 
         }
         return - 1;
-    
+
     }
 
 
