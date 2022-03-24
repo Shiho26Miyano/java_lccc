@@ -1,6 +1,7 @@
 package com.company;
 
 public class lc_162_Find_Peak_Element {
+    ///linear sacan
     public static int findPeakElement(int[] nums) {
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] > nums[i + 1])
@@ -8,7 +9,7 @@ public class lc_162_Find_Peak_Element {
         }
         return nums.length - 1;
     }
-
+    ///iterative binary search
     public static int findPeakElement2(int[] nums) {
         int l = 0, r = nums.length - 1;
         while (l < r) {
