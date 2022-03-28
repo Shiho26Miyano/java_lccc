@@ -1,6 +1,6 @@
 package com.company;
 
-public class lc_07_Reverse_Integer {
+public class lc_7_Reverse_Integer {
     public static int reverse(int x) {
         int rev = 0;
         while (x != 0) {

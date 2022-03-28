@@ -1,6 +1,6 @@
 package com.company;
 import java.util.*;
-public class lc_001_two_sum {
+public class lc_1_two_sum {
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
