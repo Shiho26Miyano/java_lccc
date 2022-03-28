@@ -1,7 +1,9 @@
 package com.company;
 
-public class lc_Add_two_numbers {
- public class ListNode {
+import java.util.LinkedList;
+
+public class lc_2_Add_two_numbers {
+ public static class ListNode {
      int val;
      ListNode next;
      ListNode() {}
@@ -25,8 +27,15 @@ public class lc_Add_two_numbers {
     }
 
     public static void main(String[] args){
-        int x = 12345;
-        System.out.println(reverse(x));
+        LinkedList<Integer> l1 = new LinkedList<Integer>();
+        l1.add(1);
+        l1.add(2);
+        l1.add(4);
+        LinkedList<Integer> l2 = new LinkedList<Integer>();
+        l2.add(1);
+        l2.add(3);
+        l2.add(4);
+        //System.out.println(addTwoNumbers(l1,l2));
 
     }
 }
