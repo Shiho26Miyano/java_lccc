@@ -6,9 +6,12 @@ public class lc_2_Add_two_numbers {
  public static class ListNode {
      int val;
      ListNode next;
+     private int value;
+
      ListNode() {}
      ListNode(int val) { this.val = val; }
      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     public int getValue() {return value;}
   }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -27,15 +30,11 @@ public class lc_2_Add_two_numbers {
     }
 
     public static void main(String[] args){
-        LinkedList<Integer> l1 = new LinkedList<Integer>();
-        l1.add(1);
-        l1.add(2);
-        l1.add(4);
-        LinkedList<Integer> l2 = new LinkedList<Integer>();
-        l2.add(1);
-        l2.add(3);
-        l2.add(4);
-        //System.out.println(addTwoNumbers(l1,l2));
+        ListNode l1 = new ListNode(8);
+
+        
+
+        System.out.println(l1.getValue());
 
     }
 }
