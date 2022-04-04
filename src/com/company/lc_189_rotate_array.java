@@ -15,10 +15,6 @@ public class lc_189_rotate_array {
         }
         return nums;
     }
-    public static int[] rotate2(int[] nums, int k) {
-
-
-    }
 
 
     public static void main(String[] args){
