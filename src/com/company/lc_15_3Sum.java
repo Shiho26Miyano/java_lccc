@@ -26,6 +26,8 @@ public class lc_15_3Sum {
         }
     }
 
+
+
     public static void main(String[] args){
         //String s = "addccggazfeezddh";
         int[] nums2 = new int[]{-1,0,1,2,-1,-4};
