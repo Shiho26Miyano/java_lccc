@@ -13,18 +13,12 @@ public class lc_128_Longest_Consecutive_Sequence {
         for (int num : num_set) {
             if (!num_set.contains(num-1)) {
                 int length = 0;
-
-
                 while (num_set.contains(length + num)) {
-
                     length++;
-
                 }
-
                 longest = Math.max(longest, length);
             }
         }
-
         return longest;
     }
 
