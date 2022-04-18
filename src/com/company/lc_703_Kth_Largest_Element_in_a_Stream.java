@@ -52,3 +52,30 @@ public class lc_703_Kth_Largest_Element_in_a_Stream {
         System.out.println(KthLargest);
     }
 }
+
+class KthLargest {
+    private static int k;
+    private PriorityQueue<Integer> miniheap;
+
+    public KthLargest(int k, int[] nums) {
+        this.k = k;
+        miniheap = new PriorityQueue<>();
+
+        for (int num: nums) {
+            miniheap.offer(num);
+        }
+
+        while (miniheap.size() > k) {
+            miniheap.poll();
+        }
+    }
+
+    public int add(int val) {
+        miniheap.offer(val);
+        if (miniheap.size() > k) {
+            miniheap.poll();
+        }
+
+        return miniheap.peek();
+    }
+}
