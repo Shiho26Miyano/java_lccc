@@ -9,11 +9,19 @@ public class lc_1046_Last_Stone_Weight {
 
         // Insert all the stones into a Max-Heap.
         PriorityQueue<Integer> heap = new PriorityQueue<>(Comparator.reverseOrder());
+        PriorityQueue<Integer> heap2 = new PriorityQueue<>((a, b) -> b - a);
+        PriorityQueue<Integer> heap3 = new PriorityQueue<>((s, t) -> t.compareTo(s));
+        PriorityQueue<Integer> heap4 = new PriorityQueue<>((x, y) -> Integer.compare(y, x));
         for (int stone: stones) {
             heap.add(stone);
+            heap2.add(stone);
+            heap3.add(stone);
+            heap4.add(stone);
         }
         System.out.println(heap.remove());
-        System.out.println(heap.remove());
+        System.out.println(heap2.remove());
+        System.out.println(heap3.remove());
+        System.out.println(heap4.remove());
         //System.out.println(heap);
         //heap.forEach(System.out::println);
 
