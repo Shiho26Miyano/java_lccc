@@ -24,5 +24,4 @@ public class lc_121__Best_Time_to_Buy_and_Sell_Stock {
         int result =  maxProfit(nums1);
         System.out.println(result);
     }
-
 }
