@@ -19,7 +19,7 @@ public class lc_875_Koko_Eating_Bananas {
             for (int pile : piles) {
                 hourSpent += Math.ceil((double) pile / middle);
             }
-            // total hour spent <= h, the new mid should be <= prev mid, make the new mid smaller
+            // total hour spent <= h, the new mid should be <= prev mid, make the new mid small
             if (hourSpent <= h) {
                 right = middle;
             } else {
