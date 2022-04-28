@@ -3,9 +3,11 @@ import java.util.*;
 public class lc_74_Search_a_2D_Matrix {
     public static boolean searchMatrix(int[][] matrix, int target) {
         int m = matrix.length;
+        System.out.println(m);
         if (m == 0)
             return false;
         int n = matrix[0].length;
+        System.out.println(n);
 
         // binary search
         int left = 0, right = m * n - 1;
