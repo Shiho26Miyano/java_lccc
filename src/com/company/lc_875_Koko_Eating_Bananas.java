@@ -6,18 +6,20 @@ public class lc_875_Koko_Eating_Bananas {
         // Initalize the left and right boundaries
         int left = 1, right = 1;
         for (int pile : piles) {
+         //   System.out.println((pile));
             right = Math.max(right, pile);
         }
+        System.out.println(right);
 
         while (left < right) {
-
+            //initialize the mid index and hour spent
             int middle = (left + right) / 2;
             int hourSpent = 0;
-
+            // sum all hours spent based on the mid index
             for (int pile : piles) {
                 hourSpent += Math.ceil((double) pile / middle);
             }
-
+            // total hour spent <= h, the new mid should be <= prev mid, make the new mid smaller
             if (hourSpent <= h) {
                 right = middle;
             } else {
