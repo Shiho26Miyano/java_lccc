@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 
 public class lc_658_Find_K_Closest_elements {
-    public static List<Integer> findClosestElements(int[] arr, int k, int x) {
+    public  static List<Integer> findClosestElements(int[] arr, int k, int x) {
         // Initialize binary search bounds
         int left = 0;
         int right = arr.length - k;
@@ -25,6 +25,8 @@ public class lc_658_Find_K_Closest_elements {
 
         return result;
     }
+
+
     public static void main(String[] args){
         int[] intArray = new int[]{1, 2, 3, 4, 5};
         int k = 4;
