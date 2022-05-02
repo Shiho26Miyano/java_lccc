@@ -30,8 +30,9 @@ public class lc_423_Reconstruct_Original_Digits_from_English {
         // letter "i" is present in "nine", "five", "six", and "eight"
         out[9] = count['i'] - out[5] - out[6] - out[8];
         // letter "n" is present in "one", "nine", and "seven"
-        out[1] = count['n'] - out[7] - 2 * out[9];
+        out[1] = count['o'] - out[0] -  out[2] - out[4];
 
+        System.out.println(Arrays.toString(out));
         // building output string
         StringBuilder output = new StringBuilder();
         for(int i = 0; i < 10; i++)
