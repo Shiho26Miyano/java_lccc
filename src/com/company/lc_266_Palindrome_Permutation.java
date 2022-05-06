@@ -21,3 +21,5 @@ public class lc_266_Palindrome_Permutation {
         System.out.println(result);
     }
 }
+
+
