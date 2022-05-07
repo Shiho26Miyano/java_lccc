@@ -5,11 +5,9 @@ import java.util.Arrays;
 public class lc_1010_Pairs_of_Songs_With_Total_Durations_Divisible_by_60 {
     public static  int numPairsDivisibleBy60(int[] time) {
         int[] remainders = new int[60];
-        System.out.println(Arrays.toString(remainders));
         int count = 0;
         for (int t: time) {
             if (t % 60 == 0) { // check if a%60==0 && b%60==0
-                System.out.println((remainders[0]));
                 count += remainders[0];
 
             } else { // check if a%60+b%60==60
