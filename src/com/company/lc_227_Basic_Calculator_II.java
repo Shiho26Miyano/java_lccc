@@ -13,6 +13,7 @@ public class lc_227_Basic_Calculator_II {
             char currentChar = s.charAt(i);
             if (Character.isDigit(currentChar)) {
                 currentNumber = (currentNumber * 10) + (currentChar - '0');
+                System.out.println(currentNumber);
             }
             if (!Character.isDigit(currentChar) && !Character.isWhitespace(currentChar) || i == len - 1) {
                 if (operation == '-') {
@@ -31,6 +32,7 @@ public class lc_227_Basic_Calculator_II {
                 currentNumber = 0;
             }
         }
+        System.out.println(Arrays.toString(stack.toArray()));
         int result = 0;
         while (!stack.isEmpty()) {
             result += stack.pop();
@@ -39,8 +41,9 @@ public class lc_227_Basic_Calculator_II {
     }
     public static void main(String[] args){
         //int[] intArray = new int[]{2,2,5,2,6,3,4,5,6,7};
-        String s = "3+2*2";
+        String s = "22-3*5";
         int result = calculate(s);
         System.out.println(result);
+
     }
 }
