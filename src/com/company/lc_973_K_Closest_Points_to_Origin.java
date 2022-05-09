@@ -7,6 +7,7 @@ public class lc_973_K_Closest_Points_to_Origin {
         Queue<int[]> maxPQ = new PriorityQueue<>((a, b) -> b[0] - a[0]);
         for (int i = 0; i < points.length; i++) {
             int[] entry = {squaredDistance(points[i]), i};
+            System.out.println(maxPQ.size());
             if (maxPQ.size() < k) {
                 // Fill the max PQ up to k points
                 maxPQ.add(entry);
@@ -32,8 +33,8 @@ public class lc_973_K_Closest_Points_to_Origin {
         return point[0] * point[0] + point[1] * point[1];
     }
     public static void main(String[] args){
-        int[][] intArray = new int[][]{{1,3},{-2,2}};
-        int target = 1;
+        int[][] intArray = new int[][]{{1,3},{-2,4},{3,3}};
+        int target = 2;
         String s = "code";
         int[][] result = kClosest(intArray, target);
         for (int[] r: result){
