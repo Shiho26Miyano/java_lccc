@@ -9,7 +9,6 @@ public class lc_441_Arranging_Coins {
         while (left <= right) {
             k = left + (right - left) / 2;
             curr = k * (k + 1) / 2;
-
             if (curr == n) return (int)k;
 
             if (n < curr) {
@@ -27,3 +26,4 @@ public class lc_441_Arranging_Coins {
         System.out.println((result));
     }
 }
+
