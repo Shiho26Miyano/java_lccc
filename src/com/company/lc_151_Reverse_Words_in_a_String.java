@@ -25,7 +25,6 @@ public class lc_151_Reverse_Words_in_a_String {
 
         // Fill from index 1 to index 4.
         Arrays.fill(ar, 1, 5, 10);
-
         System.out.println(Arrays.toString(ar));
 
     }
