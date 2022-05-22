@@ -19,6 +19,15 @@ public class lc_151_Reverse_Words_in_a_String {
         //int target =5;
         String result = reverseWords(s);
         System.out.println(result);
+
+        // have some test
+        int ar[] = {2, 2, 2, 2, 2, 2, 2, 2, 2};
+
+        // Fill from index 1 to index 4.
+        Arrays.fill(ar, 1, 5, 10);
+
+        System.out.println(Arrays.toString(ar));
+
     }
 }
 
