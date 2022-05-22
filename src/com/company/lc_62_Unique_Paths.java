@@ -20,7 +20,10 @@ public class lc_62_Unique_Paths {
         int m = 3;
         int n = 7;
         //int target =5;
-        int result = uniquePaths(m, n);
-        System.out.println(result);
+        int [][]ar = new int [3][4];
+        // Fill each row with 10.
+        for (int[] row : ar)
+            Arrays.fill(row, 10);
+        System.out.println(Arrays.deepToString(ar));
     }
 }
