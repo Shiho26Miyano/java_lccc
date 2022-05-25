@@ -18,5 +18,6 @@ public class lc_1344_Angle_Between_Hands_of_a_Clock {
         int h = 12;
         int s = 30;
         System.out.println (angleClock(h, s));
+        System.out.println (5%12);
     }
 }
