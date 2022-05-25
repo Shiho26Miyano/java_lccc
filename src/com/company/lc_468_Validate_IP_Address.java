@@ -33,7 +33,6 @@ public class lc_468_Validate_IP_Address {
         }
         return "IPv6";
     }
-
     public static String validIPAddress(String IP) {
         if (IP.chars().filter(ch -> ch == '.').count() == 3) {
             return validateIPv4(IP);
