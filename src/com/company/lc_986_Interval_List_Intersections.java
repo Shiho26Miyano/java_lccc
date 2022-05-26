@@ -5,7 +5,6 @@ public class lc_986_Interval_List_Intersections {
     public static int[][] intervalIntersection(int[][] A, int[][] B) {
         List<int[]> ans = new ArrayList();
         int i = 0, j = 0;
-
         while (i < A.length && j < B.length) {
             // Let's check if A[i] intersects B[j].
             // lo - the startpoint of the intersection
