@@ -3,6 +3,7 @@ import java.util.*;
 public class lc_16_3Sum_Closest {
     public static int threeSumClosest(int[] nums, int target) {
         int diff = Integer.MAX_VALUE;
+        System.out.println (diff);
         int sz = nums.length;
         Arrays.sort(nums);
         for (int i = 0; i < sz && diff != 0; ++i) {
