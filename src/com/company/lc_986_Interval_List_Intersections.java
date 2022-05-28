@@ -20,7 +20,6 @@ public class lc_986_Interval_List_Intersections {
             else
                 j++;
         }
-
         return ans.toArray(new int[ans.size()][]);
     }
 
