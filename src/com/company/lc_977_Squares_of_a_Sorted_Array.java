@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 
 public class lc_977_Squares_of_a_Sorted_Array {
-    public int[] sortedSquares(int[] nums) {
+    public static int[] sortedSquares(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
         int left = 0;
@@ -20,5 +20,12 @@ public class lc_977_Squares_of_a_Sorted_Array {
             result[i] = square * square;
         }
         return result;
+    }
+
+    public static void main(String[] args){
+        int[] intArray = new int[]{-4,-1,0,3,10};
+        String s = "PAYPALISHIRING";
+        String p = "abc";
+        System.out.println(Arrays.toString(intArray));
     }
 }
