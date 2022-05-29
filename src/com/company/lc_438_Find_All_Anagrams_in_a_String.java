@@ -30,3 +30,5 @@ public class lc_438_Find_All_Anagrams_in_a_String {
         System.out.println (findAnagrams(s, p));
     }
 }
+
+
