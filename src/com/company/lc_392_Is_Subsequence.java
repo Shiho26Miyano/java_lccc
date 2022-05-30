@@ -10,9 +10,9 @@ public class lc_392_Is_Subsequence {
         while (pLeft < leftBound && pRight < rightBound) {
             // move both pointers or just the right pointer
             if (s.charAt(pLeft) == t.charAt(pRight)) {
-                pLeft += 1;
+                pLeft++;
             }
-            pRight += 1;
+            pRight++;
         }
         return pLeft == leftBound;
     }
