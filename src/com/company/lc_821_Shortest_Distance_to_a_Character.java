@@ -6,6 +6,7 @@ public class lc_821_Shortest_Distance_to_a_Character {
         int N = S.length();
         int[] ans = new int[N];
         int prev = Integer.MIN_VALUE / 2;
+        System.out.println(Integer.MIN_VALUE);
 
         for (int i = 0; i < N; ++i) {
             if (S.charAt(i) == C) prev = i;
