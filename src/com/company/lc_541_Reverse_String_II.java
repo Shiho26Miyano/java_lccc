@@ -4,7 +4,8 @@ import java.util.*;
 public class lc_541_Reverse_String_II {
     public static String reverseStr(String s, int k) {
         char[] a = s.toCharArray();
-        for (int start = 0; start < a.length; start += 2 * k) {
+        for (int start = 0; start < s.length(); start += 2 * k) {
+            //start = start + 2*k;
             int i = start, j = Math.min(start + k - 1, a.length - 1);
             while (i < j) {
                 char tmp = a[i];
