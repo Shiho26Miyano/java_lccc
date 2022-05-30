@@ -3,23 +3,24 @@ import java.util.*;
 
 public class lc_392_Is_Subsequence {
 
-    public static int numSubarrayBoundedMax(int[] A, int L, int R) {
-        return count(A, R) - count(A, L-1);
-    }
+    public static boolean isSubsequence(String s, String t) {
+        Integer leftBound = s.length(), rightBound = t.length();
+        Integer pLeft = 0, pRight = 0;
 
-    public static int count(int[] A, int bound) {
-        int ans = 0, cur = 0;
-        for (int x: A) {
-            cur = x <= bound ? cur + 1 : 0;
-            ans += cur;
+        while (pLeft < leftBound && pRight < rightBound) {
+            // move both pointers or just the right pointer
+            if (s.charAt(pLeft) == t.charAt(pRight)) {
+                pLeft += 1;
+            }
+            pRight += 1;
         }
-        return ans;
+        return pLeft == leftBound;
     }
-
     public static void main(String[] args){
         int[] intArray = new int[]{2,1,4,3};
-        String s = "abcdefg";
-        int p = 2;
-        System.out.println(count(intArray, 2));
+        String t = "abc";
+        String f ="ahbgdc";
+
+        System.out.println(isSubsequence(t, f));
     }
 }
