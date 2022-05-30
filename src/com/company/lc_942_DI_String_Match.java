@@ -7,8 +7,9 @@ public class lc_942_DI_String_Match {
         int lo = 0, hi = N;
         int[] ans = new int[N + 1];
         for (int i = 0; i < N; ++i) {
-            if (S.charAt(i) == 'I')
+            if (S.charAt(i) == 'I'){
                 ans[i] = lo++;
+                System.out.println(ans[i]);}
             else
                 ans[i] = hi--;
         }
@@ -18,7 +19,7 @@ public class lc_942_DI_String_Match {
     }
     public static void main(String[] args){
         int[] intArray = new int[]{-4,-1,0,3,10};
-        String s = "abab";
+        String s = "IDIDIDID";
         String p = "abc";
         System.out.println(Arrays.toString(diStringMatch(s)));
     }
