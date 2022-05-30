@@ -19,7 +19,7 @@ public class lc_942_DI_String_Match {
     }
     public static void main(String[] args){
         int[] intArray = new int[]{-4,-1,0,3,10};
-        String s = "IDIDIDID";
+        String s = "IIIDID";
         String p = "abc";
         System.out.println(Arrays.toString(diStringMatch(s)));
     }
