@@ -6,10 +6,14 @@ public class lc_795_Number_of_Subarrays_with_Bounded_Maximum {
         return count(A, R) - count(A, L-1);
     }
 
-    public static int count(int[] A, int bound) {
+    public static  int count(int[] A, int bound) {
         int ans = 0, cur = 0;
         for (int x: A) {
-            cur = x <= bound ? cur + 1 : 0;
+            if(x <= bound){
+                cur++;
+            }else{
+                cur = 0;
+            }
             ans += cur;
         }
         return ans;
