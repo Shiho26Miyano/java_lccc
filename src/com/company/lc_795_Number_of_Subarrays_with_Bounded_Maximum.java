@@ -14,7 +14,8 @@ public class lc_795_Number_of_Subarrays_with_Bounded_Maximum {
             }else{
                 cur = 0;
             }
-            ans += cur;
+            ans = cur + ans;
+            //ans += cur;
         }
         return ans;
     }
