@@ -19,4 +19,3 @@ public class lc_346_Moving_Average_from_Data_Stream {
         return windowSum * 1.0 / Math.min(queue.size(), size);
     }
 }
-
