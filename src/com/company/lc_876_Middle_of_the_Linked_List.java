@@ -11,11 +11,12 @@ public class lc_876_Middle_of_the_Linked_List {
         return slow;
     }
 
+    
+    public class ListNode876 {
+        int val;
+        ListNode876 next;
+        ListNode876() {}
+        ListNode876(int val) { this.val = val; }
+        ListNode876(int val, ListNode876 next) { this.val = val; this.next = next; }
+    }
 }
- class ListNode876 {
-      int val;
-      ListNode876 next;
-      ListNode876() {}
-      ListNode876(int val) { this.val = val; }
-      ListNode876(int val, ListNode876 next) { this.val = val; this.next = next; }
-  }
