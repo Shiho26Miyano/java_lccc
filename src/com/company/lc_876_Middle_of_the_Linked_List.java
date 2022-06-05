@@ -11,7 +11,7 @@ public class lc_876_Middle_of_the_Linked_List {
         return slow;
     }
 
-    
+
     public class ListNode876 {
         int val;
         ListNode876 next;
