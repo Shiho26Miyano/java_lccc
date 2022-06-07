@@ -14,7 +14,7 @@ public class lc_141_Linked_List_Cycle {
         return false;
     }
 }
-class ListNode141 {
+ class ListNode141 {
      int val;
      ListNode141 next;
      ListNode141(int x) {
