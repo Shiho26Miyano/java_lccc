@@ -1,4 +1,5 @@
 package com.company;
+import java.util.*;
 
 public class lc_1290_Convert_Binary_Number_in_a_Linked_List_to_Integer {
     public int getDecimalValue(ListNode head) {

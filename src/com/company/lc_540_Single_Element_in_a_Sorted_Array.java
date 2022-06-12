@@ -1,4 +1,5 @@
 package com.company;
+import java.util.*;
 
 public class lc_540_Single_Element_in_a_Sorted_Array {
     public static int singleNonDuplicate(int[] nums) {
