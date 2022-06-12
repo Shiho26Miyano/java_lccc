@@ -3,8 +3,8 @@ package com.company;
 public class lc_237_Delete_Node_in_a_Linked_List {
     public void deleteNode(ListNode node) {
         node.val = node.next.val;
-        ListNode temp = node.next;
-        node.next = temp.next;
+        node.next = node.next.next;
+
 
 
     }
