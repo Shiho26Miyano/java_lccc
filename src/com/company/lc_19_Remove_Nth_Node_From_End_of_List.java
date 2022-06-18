@@ -1,7 +1,8 @@
 package com.company;
+import java.util.*;
 
 public class lc_19_Remove_Nth_Node_From_End_of_List {
-    class Solution {
+
         public ListNode removeNthFromEnd(ListNode head, int n) {
             ListNode dummy = new ListNode(0);
             dummy.next = head;
