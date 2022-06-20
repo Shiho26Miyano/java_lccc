@@ -11,16 +11,13 @@ public class lc_1710_Maximum_Units_on_a_Truck {
 
         myQueue.addAll(Arrays.asList(boxTypes));
         int unitCount = 0;
-        while (!myQueue.isEmpty()) {
+        while (!myQueue.isEmpty() && truckSize >=0 ) {
             int[] top = myQueue.poll();
-            int boxCount = Math.min(truckSize, top[0]);
-            unitCount += boxCount * top[1];
-            truckSize -= boxCount;
-            if(truckSize == 0)
-                break;
+            int boxLast = Math.min(truckSize, top[0]);
+            unitCount += boxLast * top[1];
+            truckSize = truckSize - boxLast;
         }
         return unitCount;
-    }
     }
     public static void main(String[] args){
         int[][] array = new int[][]{{1, 3}, {2, 2}, {3, 1}};
