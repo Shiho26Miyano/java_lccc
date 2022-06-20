@@ -15,7 +15,7 @@ public class lc_1710_Maximum_Units_on_a_Truck {
             int[] top = myQueue.poll();
             int boxLast = Math.min(truckSize, top[0]);
             unitCount += boxLast * top[1];
-            truckSize = truckSize - boxLast;
+            truckSize -= boxLast;
         }
         return unitCount;
     }
@@ -25,7 +25,5 @@ public class lc_1710_Maximum_Units_on_a_Truck {
         int result =  maximumUnits(array, target);
         System.out.println((result));
     }
-
-
 
 }
