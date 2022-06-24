@@ -22,7 +22,6 @@ public class lc_1094_Car_Pooling {
         return true;
     }
 
-
     public static void main(String[] args){
         int[][] array = new int[][]{{2, 1, 5}, {3, 3, 7}};
         int target = 4;
