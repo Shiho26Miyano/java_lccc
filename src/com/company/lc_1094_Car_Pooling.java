@@ -1,5 +1,7 @@
 package com.company;
 import java.util.*;
+// trips = [[2,1,5],[3,3,7]], capacity = 4
+// trips[i] = [numPassengersi, fromi, toi]
 
 public class lc_1094_Car_Pooling {
 
