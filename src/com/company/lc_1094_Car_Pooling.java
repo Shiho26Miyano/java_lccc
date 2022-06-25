@@ -22,7 +22,7 @@ public class lc_1094_Car_Pooling {
             System.out.println((timestamp));
             System.out.println("end");
         }
-        // loop sum up passenger count, check on each add/drop point whether the total count <= capacity 
+        // loop sum up passenger count, check on each add/drop point whether the total count <= capacity
         int usedCapacity = 0;
         for (int passengerChange : timestamp.values()) {
             System.out.println("timestamp values");
