@@ -2,29 +2,34 @@ package com.company;
 import java.util.*;
 public class lc_692_Top_K_Frequent_Words {
     public static List<String> topKFrequent(String[] words, int k) {
-        List<String> res = new LinkedList<>();
+        // create HashMap composite k:v pair
         Map<String, Integer> map = new HashMap<>();
         for (int i = 0; i < words.length; i++){
             map.put(words[i], map.getOrDefault(words[i], 0) + 1);
         }
 
-        PriorityQueue<Map.Entry<String,Integer>> pq = new PriorityQueue<>(
-                (a,b) -> a.getValue() == b.getValue() ? b.getKey().compareTo(a.getKey()) :a.getValue() - b.getValue()
-
+        // create empty PriorityQueue, highest to lowest
+        PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
+                (a, b) -> a.getValue() == b.getValue() ? a.getKey().compareTo(b.getKey()): b.getValue() - a.getValue()
         );
+
         for (Map.Entry<String, Integer> entry: map.entrySet()){
             pq.add(entry);
-            if(pq.size()>k) pq.poll();
         }
 
-        while(!pq.isEmpty()){
-            res.add(0, pq.poll().getKey());
+
+        // create LinkedList res
+        // insert pq to LinkedList while res.size() < k
+        List<String> res = new LinkedList<>();
+        while(res.size() < k){
+            res.add(pq.poll().getKey());
         }
         return res;
+
     }
     public static void main(String[] args){
-        String[] strArray = new String[]{"i", "love", "leetcode", "i", "love", "coding"};
-        int target = 2;
+        String[] strArray = new String[]{"i", "love", "leetcode", "hehe", "hehe", "hehe",  "i", "love", "coding"};
+        int target = 3;
         List<String> result =  topKFrequent(strArray, target);
         System.out.println((result));
     }
