@@ -18,6 +18,7 @@ public class lc_692_Top_K_Frequent_Words {
         }
 
 
+
         // create LinkedList res
         // insert pq to LinkedList while res.size() < k
         List<String> res = new LinkedList<>();
@@ -34,3 +35,14 @@ public class lc_692_Top_K_Frequent_Words {
         System.out.println((result));
     }
 }
+
+// method 2
+//        for(Map.Entry<String, Integer> entry: map.entrySet())
+//        {
+//        pq.offer(entry);
+//        if(pq.size()>k)
+//        pq.poll();
+//        }
+
+ //       while(!pq.isEmpty())
+//        result.add(0, pq.poll().getKey());
