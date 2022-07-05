@@ -12,19 +12,20 @@ public class lc_139_Word_Break {
         boolean[] dp = new boolean[n + 1];
 
         dp[0] = true;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 0; j < i; j++) {
-                if((i - j) > maxLen){
+        for (int end = 1; end <= n; end++){
+            for (int start = 0; start < end; start++){
+
+                if (end - start > maxLen){
                     continue;
                 }
 
-
-                if (dp[j] && wordDict.contains(s.substring(j, i))) {
-                    dp[i] = true;
+                if (dp[start] && wordDict.contains(s.substring(start, end))){
+                    dp[end] = true;
                     break;
                 }
 
             }
+
         }
         System.out.println(Arrays.toString(dp));
         return dp[n];
