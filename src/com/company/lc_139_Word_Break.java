@@ -17,6 +17,11 @@ public class lc_139_Word_Break {
                 if((i - j) > maxLen){
                     continue;
                 }
+                System.out.println("check here");
+                System.out.println(i);
+                System.out.println(j);
+                System.out.println(s.substring(j, i));
+
 
                 if (dp[j] && wordDict.contains(s.substring(j, i))) {
                     dp[i] = true;
