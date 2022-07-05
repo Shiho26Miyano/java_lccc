@@ -2,26 +2,19 @@ package com.company;
 import java.util.*;
 public class lc_451_Sort_Characters_By_Frequency {
     public static String frequencySort(String s) {
-
-        // Count up the occurances.
-        Map<Character, Integer> counts = new HashMap<>();
+        Map<Character, Integer> map = new HashMap();
         for (char c : s.toCharArray()) {
-            counts.put(c, counts.getOrDefault(c, 0) + 1);
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
-
-        // Make a list of the keys, sorted by frequency.
-        List<Character> characters = new ArrayList<>(counts.keySet());
-        Collections.sort(characters, (a, b) -> counts.get(b) - counts.get(a));
-
-        // Convert the counts into a string with a sb.
-        StringBuilder sb = new StringBuilder();
-        for (char c : characters) {
-            int copies = counts.get(c);
-            for (int i = 0; i < copies; i++) {
-                sb.append(c);
+        List<Map.Entry<Character, Integer>> list = new ArrayList<>(map.entrySet());
+        Collections.sort(list, (o1, o2) -> (o2.getValue() - o1.getValue()));
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Map.Entry<Character, Integer> entry : list) {
+            for (int i = 0; i < entry.getValue(); i++) {
+                stringBuilder.append(entry.getKey());
             }
         }
-        return sb.toString();
+        return stringBuilder.toString();
     }
 
     public static void main(String[] args){
