@@ -3,15 +3,15 @@ import java.util.*;
 
 public class lc_101_Symmetric_Tree {
     public boolean isSymmetric(TreeNode root) {
-        return root==null || isSymmetricHelp(root.left, root.right);
+        return isMirror(root, root);
     }
 
-    private boolean isSymmetricHelp(TreeNode left, TreeNode right){
-        if(left==null || right==null)
-            return left==right;
-        if(left.val!=right.val)
-            return false;
-        return isSymmetricHelp(left.left, right.right) && isSymmetricHelp(left.right, right.left);
+    public boolean isMirror(TreeNode t1, TreeNode t2) {
+        if (t1 == null && t2 == null) return true;
+        if (t1 == null || t2 == null) return false;
+        return (t1.val == t2.val)
+                && isMirror(t1.right, t2.left)
+                && isMirror(t1.left, t2.right);
     }
 
 
