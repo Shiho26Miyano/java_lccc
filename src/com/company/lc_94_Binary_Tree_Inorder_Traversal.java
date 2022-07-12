@@ -26,6 +26,6 @@ public class lc_94_Binary_Tree_Inorder_Traversal {
             this.val = val;
             this.left = left;
             this.right = right;
-
+        }
     }
 }
