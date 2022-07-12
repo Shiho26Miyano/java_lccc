@@ -5,10 +5,10 @@ public class lc_226_Invert_Binary_Tree {
         if (root == null) {
             return null;
         }
-        TreeNode right = invertTree(root.right);
-        TreeNode left = invertTree(root.left);
-        root.left = right;
-        root.right = left;
+        TreeNode left_temp = invertTree(root.left);
+        root.left = invertTree(root.right);
+        root.right = left_temp;
+
         return root;
     }
     public class TreeNode {
