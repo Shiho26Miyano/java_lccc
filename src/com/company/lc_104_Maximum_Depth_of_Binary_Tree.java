@@ -7,7 +7,7 @@ public class lc_104_Maximum_Depth_of_Binary_Tree {
         } else {
             int left_height = maxDepth(root.left);
             int right_height = maxDepth(root.right);
-            return java.lang.Math.max(left_height, right_height) + 1;
+            return Math.max(left_height, right_height) + 1;
         }
     }
     public class TreeNode {
