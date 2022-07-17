@@ -20,10 +20,16 @@ public class lc_257_Binary_Tree_Paths {
         construct_paths(root, "", paths);
         return paths;
     }
-    public class TreeNode {
-        public TreeNode left;
-        public TreeNode right;
-        int val;
-
+}
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }
