@@ -3,25 +3,21 @@ import java.util.*;
 
 public class lc_17_Letter_Combinations_of_a_Phone_Number {
     public static List<String> letterCombinations(String digits) {
-        List<String> ans = new ArrayList<>();
-        if (digits.equals("")) {
-            return ans;
-        }
-        String[] buttons = new String[]{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        LinkedList<String> ans = new LinkedList<String>();
+        int L = digits.length();
+        if (L == 0) return ans;
+
+        String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         ans.add("");
-        for (char c : digits.toCharArray()) {
-            String button = buttons[Integer.parseInt(c + "")];
-            List<String> newList = new ArrayList<>();
-            for (String str : ans) {
-                for (char b : button.toCharArray()) {
-                    newList.add(str + b);
-                }
+        for(int i =0; i<digits.length();i++){
+            int x = Character.getNumericValue(digits.charAt(i));
+            while(ans.peek().length()==i){
+                String t = ans.remove();
+                for(char s : mapping[x].toCharArray())
+                    ans.add(t+s);
             }
-            ans = newList;
         }
         return ans;
-
-
     }
 
     public static void main(String[] args){
