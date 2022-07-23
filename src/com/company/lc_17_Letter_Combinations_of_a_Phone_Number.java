@@ -12,7 +12,7 @@ public class lc_17_Letter_Combinations_of_a_Phone_Number {
         for(int i =0; i<digits.length();i++){
             int x = Character.getNumericValue(digits.charAt(i));
             while(ans.peek().length()==i){
-                String t = ans.remove();
+                String t = ans.poll();
                 for(char s : mapping[x].toCharArray())
                     ans.add(t+s);
             }
