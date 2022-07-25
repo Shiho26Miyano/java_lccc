@@ -4,11 +4,11 @@ import java.util.*;
 public class lc_17_Letter_Combinations_of_a_Phone_Number {
     public static List<String> letterCombinations(String digits) {
         // the purpose of the question is using stack, while length of element in the ans == i , element is poll() and element + mapping[i] all possibilities
+        // 用过就扔t，
         LinkedList<String> ans = new LinkedList<String>();
-        ans.add("");
         int L = digits.length();
         if (L == 0) return ans;
-
+        ans.add("");
         String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
         for(int i =0; i<digits.length();i++){
