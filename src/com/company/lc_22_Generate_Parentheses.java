@@ -26,6 +26,8 @@ public class lc_22_Generate_Parentheses {
             cur.deleteCharAt(cur.length() - 1);
         }
     }
+
+    }
     public static void main(String[] args){
         int x = 3;
         System.out.println( generateParenthesis(x));
