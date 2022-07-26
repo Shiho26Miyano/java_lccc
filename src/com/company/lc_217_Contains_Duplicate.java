@@ -5,10 +5,10 @@ import java.util.Arrays;
 
 public class lc_217_Contains_Duplicate {
     public static boolean containsDuplicate(int[] nums) {
-        Set<Integer> set = new HashSet<>(nums.length);
-        for (int x: nums) {
-            if (set.contains(x)) return true;
-            set.add(x);
+        HashSet<Integer> mySet = new HashSet<>(nums.length);
+        for (int n : nums){
+            if (mySet.contains(n)) return true;
+            mySet.add(n);
         }
         return false;
     }
