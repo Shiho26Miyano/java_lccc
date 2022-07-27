@@ -8,7 +8,6 @@ public class lc_80_Remove_Duplicates_from_Sorted_Array_II {
             if (i < 2 || n > nums[i - 2]){
                 System.out.println(i++);
                 i--;
-
                 nums[i++] = n;
 
 
