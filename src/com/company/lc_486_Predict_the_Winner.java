@@ -5,12 +5,13 @@ public class lc_486_Predict_the_Winner {
     public static boolean PredictTheWinner(int[] nums) {
         return winner(nums, 0, nums.length - 1, 1) >= 0;
     }
-    public static int winner(int[] nums, int s, int e, int turn) {
-        if (s == e)
-            return turn * nums[s];
-        System.out.println((turn));
-        int a = turn * nums[s] + winner(nums, s + 1, e, -turn);
-        int b = turn * nums[e] + winner(nums, s, e - 1, -turn);
+    public static int winner(int[] nums, int l, int r, int turn) {
+        if (l == r){
+            return turn * nums[l];
+        }
+
+        int a = turn * nums[l] + winner(nums, l + 1, r, -turn);
+        int b = turn * nums[r] + winner(nums, l, r - 1, -turn);
         return turn * Math.max(turn * a, turn * b);
 
     }
