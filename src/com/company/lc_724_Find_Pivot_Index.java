@@ -17,3 +17,4 @@ public class lc_724_Find_Pivot_Index {
         System.out.println((result));
     }
 }
+
