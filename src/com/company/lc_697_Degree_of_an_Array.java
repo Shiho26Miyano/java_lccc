@@ -23,7 +23,7 @@ public class lc_697_Degree_of_an_Array {
         return ans;
     }
     public static void main(String[] args){
-        int[] intArray = new int[]{1,2,3,4};
+        int[] intArray = new int[]{1,2,2,3,1};
         int target = 5;
         int result = findShortestSubArray(intArray);
         System.out.println((result));
