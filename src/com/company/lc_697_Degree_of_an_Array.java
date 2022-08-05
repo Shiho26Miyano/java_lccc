@@ -11,6 +11,10 @@ public class lc_697_Degree_of_an_Array {
             if (left.get(x) == null) left.put(x, i);
             right.put(x, i);
             count.put(x, count.getOrDefault(x, 0) + 1);
+            System.out.println(left);
+            System.out.println(right);
+            System.out.println(count);
+            System.out.println("that is it");
         }
 
         int ans = nums.length;
