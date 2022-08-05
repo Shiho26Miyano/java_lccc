@@ -8,6 +8,7 @@ public class lc_594_Longest_Harmonious_Subsequence {
         for (int num: nums) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
+        System.out.println(map);
         for (int key: map.keySet()) {
             if (map.containsKey(key + 1))
                 res = Math.max(res, map.get(key) + map.get(key + 1));
