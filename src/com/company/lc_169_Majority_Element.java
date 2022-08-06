@@ -2,15 +2,10 @@ package com.company;
 import java.util.*;
 
 public class lc_169_Majority_Element {
-    private static Map<Integer, Integer> countNums(int[] nums) {
+    private static  Map<Integer, Integer> countNums(int[] nums) {
         Map<Integer, Integer> counts = new HashMap<Integer, Integer>();
         for (int num : nums) {
-            if (!counts.containsKey(num)) {
-                counts.put(num, 1);
-            }
-            else {
-                counts.put(num, counts.get(num)+1);
-            }
+            counts.put(num, counts.getOrDefault(num, 0) + 1);
         }
         return counts;
     }
@@ -27,6 +22,7 @@ public class lc_169_Majority_Element {
 
         return majorityEntry.getKey();
     }
+
     public static void main(String[] args){
         int[] intArray = new int[]{3,2,3};
         int target = 5;
