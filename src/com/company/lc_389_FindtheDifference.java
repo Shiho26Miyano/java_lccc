@@ -3,22 +3,22 @@ import java.util.*;
 
 public class lc_389_FindtheDifference {
     public static char findTheDifference(String s, String t) {
-
-        char extraChar = 'a';
-
-        HashMap <Character,Integer> counterS = new HashMap <>();
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            counterS.put(ch, counterS.getOrDefault(ch, 0) + 1);
+        char extraC = '\0';
+        Map<Character, Integer> sCounter = new HashMap<>();
+        for (int i = 0; i < s.length(); i++){
+            char sChar = s.charAt(i);
+            sCounter.put(sChar, sCounter.getOrDefault(sChar, 0) + 1);
         }
 
-        for (int i = 0; i < t.length(); i++) {
-            char ch = t.charAt(i);
-            int countOfChar = counterS.getOrDefault(ch, 0);
-            if (countOfChar == 0) extraChar = ch;
-            counterS.put(ch, countOfChar - 1);
+        for (int i = 0; i < t.length(); i++){
+            char tChar = t.charAt(i);
+            int tCharCheck = sCounter.getOrDefault(tChar, 0);
+            if (tCharCheck == 0) extraC = tChar;
+            sCounter.put(tChar, sCounter.getOrDefault(tChar, 0) - 1);
+
         }
-        return extraChar;
+
+        return extraC;
     }
     public  static int findTheDifference2(String s, String t) {
         int sSum = 0;
