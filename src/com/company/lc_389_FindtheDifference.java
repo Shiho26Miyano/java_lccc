@@ -30,12 +30,22 @@ public class lc_389_FindtheDifference {
         }
         return extraChar;
     }
+    public  static char findTheDifference2(String s, String t) {
+        int sSum = 0;
+        int tSum = t.charAt(t.length() - 1);
+        for(int i = 0; i < s.length() ; i++){
+            sSum += s.charAt(i);
+            tSum += t.charAt(i);
+        }
+
+        return (char)(tSum - sSum);
+    }
     public static void main(String[] args){
         int[] intArray = new int[]{1,2,2,3,1};
         int target = 5;
         String str1 = "abcd";
         String str2 = "abcde";
-        char result =  findTheDifference(str1, str2);
+        char result =  findTheDifference2(str1, str2);
         System.out.println((result));
     }
 }
