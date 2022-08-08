@@ -12,6 +12,7 @@ public class lc_804_Unique_Morse_Code_Words {
             StringBuilder code = new StringBuilder();
             for (char c: word.toCharArray())
                 code.append(MORSE[c - 'a']);
+            System.out.println(code);
             seen.add(code.toString());
         }
 
