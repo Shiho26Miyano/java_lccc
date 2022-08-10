@@ -10,9 +10,14 @@ public class lc_1086_High_Five {
         for (int[] item : items) {
             int id = item[0];
             int score = item[1];
-            if (!allScores.containsKey(id))
+            if (!allScores.containsKey(id)){
                 // max heap
                 allScores.put(id, new PriorityQueue<>((a,b) -> b - a));
+                System.out.println(allScores);
+
+            }
+
+
             // Add score to the max heap
             allScores.get(id).add(score);
         }
