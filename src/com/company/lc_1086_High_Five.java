@@ -37,7 +37,6 @@ public class lc_1086_High_Five {
 
         print2D(result);
     }
-
     public static void print2D(int mat[][])
     {
         // Loop through all rows
