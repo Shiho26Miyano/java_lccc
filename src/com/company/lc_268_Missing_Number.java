@@ -19,23 +19,14 @@ public class lc_268_Missing_Number {
     // sort
     public static int missingNumber2(int[] nums) {
         Arrays.sort(nums);
+        if (nums[nums.length - 1] != nums.length) return nums.length;
 
-        if (nums[nums.length-1] != nums.length) {
-            return nums.length;
-        }
-
-        else if (nums[0] != 0) {
-            return 0;
-        }
-
-        for (int i = 0; i < nums.length + 1; i++) {
+        for (int i = 0; i < nums.length + 1; i++){
             if (nums[i] != i) return nums[i] - 1;
-
         }
-
         return -1;
-
     }
+
 
     public static void main(String[] args) {
         int[][] intArray = new int[][]{{0, 30}, {5, 10}, {15, 20}};
