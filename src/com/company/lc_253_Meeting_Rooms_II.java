@@ -13,8 +13,12 @@ public class lc_253_Meeting_Rooms_II {
         // Use a min heap to track the minimum end time of merged intervals
         PriorityQueue<int[]> heap = new PriorityQueue<>(intervals.length, (a, b) -> a[1] - b[1]);
 
+
         // start with the first meeting, put it to a meeting room
+        //print2D(intervals);
+        //System.out.println(Arrays.toString(intervals[0]));
         heap.offer(intervals[0]);
+        //System.out.println(Arrays.deepToString(heap.toArray()));
 
         for (int i = 1; i < intervals.length; i++) {
             // get the meeting room that finishes earliest
@@ -32,7 +36,7 @@ public class lc_253_Meeting_Rooms_II {
             // don't forget to put the meeting room back
             heap.offer(interval);
         }
-
+        System.out.println(Arrays.deepToString(heap.toArray()));
         return heap.size();
     }
 
