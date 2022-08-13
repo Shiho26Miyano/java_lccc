@@ -7,7 +7,6 @@ public class lc_253_Meeting_Rooms_II {
 
         Arrays.sort(intervals, (a, b)->a[0] - b[0]);
         PriorityQueue<int[]> heap = new PriorityQueue<>(intervals.length, (a, b)->a[1] - b[1]);
-
         heap.offer(intervals[0]);
 
         for (int i = 1; i < intervals.length; i++){
