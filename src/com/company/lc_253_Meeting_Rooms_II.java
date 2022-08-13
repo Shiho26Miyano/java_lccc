@@ -23,7 +23,6 @@ public class lc_253_Meeting_Rooms_II {
         return heap.size();
     }
 
-
     public static void main(String[] args){
         int[][] intArray = new int[][]{{0, 30}, {5, 10}, {15, 20}};
         int target = 19;
