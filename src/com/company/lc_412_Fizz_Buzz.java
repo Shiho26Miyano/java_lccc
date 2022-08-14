@@ -15,7 +15,7 @@ public class lc_412_Fizz_Buzz {
                         put(5, "Buzz");
                     }
                 };
-
+        System.out.println(fizzBizzDict);
         // List of divisors which we will iterate over.
         List<Integer> divisors = new ArrayList<>(Arrays.asList(3, 5));
 
@@ -46,7 +46,7 @@ public class lc_412_Fizz_Buzz {
     public static void main(String[] args){
         int[][] intArray = new int[][]{{0, 30}, {5, 10}, {15, 20}};
         int target = 19;
-        String[] result = fizzBuzz(3).toArray(new String[0]);
+        List<String> result = fizzBuzz(3);
 
         System.out.println(result);
     }
