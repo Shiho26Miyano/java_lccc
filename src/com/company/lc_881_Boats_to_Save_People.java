@@ -3,18 +3,22 @@ import java.util.*;
 
 public class lc_881_Boats_to_Save_People {
     public static int numRescueBoats(int[] people, int limit) {
+
         Arrays.sort(people);
-        int i = 0, j = people.length - 1;
-        int ans = 0;
 
-        while (i <= j) {
-            ans++;
-            if (people[i] + people[j] <= limit)
-                i++;
-            j--;
+        int  start  =0;
+        int  end = people.length-1;
+        int  boat =0;
+
+        while(start <=end){
+            if(people[end] + people[start] <= limit){
+                start++;
+            }
+            end--;
+            boat++;
+
         }
-
-        return ans;
+        return  boat;
     }
     public static void main(String[] args){
         int[] nums1 = new int[]{1,2};
