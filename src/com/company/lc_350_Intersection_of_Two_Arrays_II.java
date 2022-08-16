@@ -18,7 +18,7 @@ public class lc_350_Intersection_of_Two_Arrays_II {
             }
         }
         return Arrays.copyOfRange(nums1, 0, k);
-    }
+        }
 
 
     public static void main(String[] args){

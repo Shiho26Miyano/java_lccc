@@ -2,6 +2,7 @@ package com.company;
 import java.util.*;;
 
 public class lc_1429_First_Unique_Number {
+
     HashMap<Integer, Integer> map = new HashMap<>();
     Queue<Integer> data = new LinkedList();
 
@@ -13,10 +14,17 @@ public class lc_1429_First_Unique_Number {
     }
 
     public int showFirstUnique() {
+
         while(!data.isEmpty()){
             int ans = data.peek();
-            if (map.get(ans) == 1) return ans;
-            data.poll();
+
+            if (map.get(ans) == 1){
+                return ans;
+            }
+            else{
+                data.poll();
+            }
+
         }
         return -1;
 
@@ -27,7 +35,4 @@ public class lc_1429_First_Unique_Number {
         data.add(value);
 
     }
-
-
-
 }
