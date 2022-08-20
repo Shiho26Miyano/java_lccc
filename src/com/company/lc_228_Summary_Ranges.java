@@ -4,19 +4,21 @@ import java.util.*;
 
 public class lc_228_Summary_Ranges {
     public static List<String> summaryRanges(int[] nums) {
-        List<String> summary = new ArrayList<>();
-        for (int i = 0, j = 0; j < nums.length; ++j) {
-            // check if j + 1 extends the range [nums[i], nums[j]]
-            if (j + 1 < nums.length && nums[j + 1] == nums[j] + 1)
-                continue;
-            // put the range [nums[i], nums[j]] into the list
-            if (i == j)
-                summary.add(nums[i] + "");
-            else
-                summary.add(nums[i] + "->" + nums[j]);
-            i = j + 1;
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            String start = String.valueOf(nums[i]);
+            int tmpI = i;
+            while ((i + 1) < nums.length && (nums[i] + 1) == nums[i + 1]) {
+                i++;
+            }
+            if (tmpI == i) {
+                result.add(start);
+            } else {
+                result.add(start + "->" + String.valueOf(nums[i]));
+            }
         }
-        return summary;
+        return result;
+
     }
     public static void main(String[] args){
         int[] nums1 = new int[]{0,1,2,4,5,7};
