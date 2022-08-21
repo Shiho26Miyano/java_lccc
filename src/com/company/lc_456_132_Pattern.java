@@ -3,6 +3,7 @@ import java.util.*;
 
 
 public class lc_456_132_Pattern {
+    //method 1 is faster
     public static boolean find132pattern(int[] nums) {
         if (nums.length < 3)
             return false;
