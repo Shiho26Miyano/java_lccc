@@ -3,24 +3,26 @@ import java.util.*;
 public class lc_118_Pascals_Triangle {
     public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-
         result.add(new ArrayList<>());
         result.get(0).add(1);
 
-        for (int rowNum = 1; rowNum < numRows; rowNum++) {
-            List<Integer> row = new ArrayList<>();
+        for (int rowNum = 1; rowNum < numRows; rowNum++){
+
+            List<Integer> currRow = new ArrayList<>();
             List<Integer> prevRow = result.get(rowNum - 1);
 
-            row.add(1);
+            currRow.add(1);
 
-            for (int j = 1; j < rowNum; j++) {
-                row.add(prevRow.get(j - 1) + prevRow.get(j));
+            for (int item = 1; item < rowNum; item++ ){
+                currRow.add(prevRow.get(item - 1) + prevRow.get(item));
             }
 
-            row.add(1);
-            result.add(row);
-        }
+            currRow.add(1);
 
+            result.add(currRow);
+
+
+        }
         return result;
     }
 
