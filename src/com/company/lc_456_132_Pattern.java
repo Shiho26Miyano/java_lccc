@@ -23,6 +23,7 @@ public class lc_456_132_Pattern {
         return false;
     }
     public static boolean find132pattern2(int[] nums) {
+        //倒着读，遇到一个数B比之前降序得数大，就从降序那些数中找到最大的A，一旦再出现比A小的，就找到啦
         Deque<Integer> stack = new LinkedList<>();
 
         int s3 = Integer.MIN_VALUE;
