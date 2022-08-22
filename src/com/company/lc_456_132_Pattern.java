@@ -23,22 +23,29 @@ public class lc_456_132_Pattern {
         return false;
     }
     public static boolean find132pattern2(int[] nums) {
-        //倒着读，遇到一个数B比之前降序得数大，就从降序那些数中找到最大的A，一旦再出现比A小的，就找到啦
-        Deque<Integer> stack = new LinkedList<>();
+        // 1. use a fake minR, scan from right, stack.push(nums[i])
+        // 2. once get one nums[i] > stack nums[i] peek, get the historical max stack
+        // 3.if next nums[i] < stack peek, return true, else continue checks nums[i] > stack peek
+        //总之就是先找到右面有个数能比自己小，然后下一轮
 
-        int s3 = Integer.MIN_VALUE;
-        for (int i = nums.length - 1; i >= 0; i--) {
-            if (nums[i] < s3) {
+        Deque <Integer> stack = new LinkedList<>();
+
+        int min2 = Integer.MIN_VALUE;
+        for (int i = nums.length - 1; i >= 0; i--){
+            if (nums[i] < min2){
                 return true;
-            } else {
-                while (!stack.isEmpty() && nums[i] > stack.peek()) {
-                    s3 = Math.max(s3, stack.pop());
+            }else{
+                while(!stack.isEmpty() && nums[i] > stack.peek()){
+                    min2 = Math.max(min2, stack.poll());
+
                 }
             }
-            stack.push(nums[i]);
-        }
 
+            stack.push(nums[i]);
+
+        }
         return false;
+
     }
 
 
