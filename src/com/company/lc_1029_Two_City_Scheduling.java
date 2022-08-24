@@ -28,7 +28,6 @@ public class lc_1029_Two_City_Scheduling {
     }
 
 
-
     public static void print2D(int mat[][])
     {
         // Loop through all rows
