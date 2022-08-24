@@ -2,7 +2,6 @@ package com.company;
 import java.util.*;
 
 public class lc_394_Decode_String {
-
     private static int idx;
 
     public static String decodeString(String s) {
@@ -10,7 +9,7 @@ public class lc_394_Decode_String {
         return helper(s);
     }
 
-    private static String helper(String s) {
+    private static  String helper(String s) {
         StringBuilder ans = new StringBuilder();
         int repeat = 0;
         while (idx < s.length()) {
@@ -18,22 +17,22 @@ public class lc_394_Decode_String {
             if (ch == ']') {
                 return ans.toString();
             } else if (ch == '[') {
-                ++idx;
+                idx++;
                 String str = helper(s);
                 while (repeat > 0) {
                     ans.append(str);
-                    --repeat;
+                    repeat--;
                 }
             } else if (Character.isDigit(ch)) {
                 repeat = repeat * 10 + ch - '0';
             } else {
                 ans.append(ch);
             }
-            ++idx;
+            idx++;
         }
         return ans.toString();
-
     }
+
     public static void main(String[] args){
         int[] nums1 = new int[]{0,1,2,4,5,7};
         //int[] nums2 = new int[]{2,2,3};
