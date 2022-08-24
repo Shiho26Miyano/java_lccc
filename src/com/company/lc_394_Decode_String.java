@@ -3,38 +3,35 @@ import java.util.*;
 
 public class lc_394_Decode_String {
 
+    private static int idx;
+
     public static String decodeString(String s) {
-        Stack<Integer> count = new Stack<>();
-        Stack<String> str = new Stack<>();
+        idx = 0;
+        return helper(s);
+    }
 
-        int idx = 0;
-        str.push("");
-
+    private static String helper(String s) {
+        StringBuilder ans = new StringBuilder();
+        int repeat = 0;
         while (idx < s.length()) {
-            if (s.charAt(idx) >= '0' && s.charAt(idx) <= '9') {
-                int start = idx;
-                while (s.charAt(idx + 1) >= '0' && s.charAt(idx + 1) <= '9') {
-                    idx++;
+            char ch = s.charAt(idx);
+            if (ch == ']') {
+                return ans.toString();
+            } else if (ch == '[') {
+                ++idx;
+                String str = helper(s);
+                while (repeat > 0) {
+                    ans.append(str);
+                    --repeat;
                 }
-                count.push(Integer.parseInt(s.substring(start, idx + 1)));
-            } else if (s.charAt(idx) == '[') {
-                str.push("");
-            } else if (s.charAt(idx) == ']') {
-                String st = str.pop();
-                StringBuilder sb = new StringBuilder();
-                int n = count.pop();
-                for (int j = 0; j < n; j++) {
-                    sb.append(st);
-                }
-                str.push(str.pop() + sb.toString());
+            } else if (Character.isDigit(ch)) {
+                repeat = repeat * 10 + ch - '0';
             } else {
-                str.push(str.pop() + s.charAt(idx));
+                ans.append(ch);
             }
-
-            idx++;
+            ++idx;
         }
-
-        return str.pop();
+        return ans.toString();
 
     }
     public static void main(String[] args){
