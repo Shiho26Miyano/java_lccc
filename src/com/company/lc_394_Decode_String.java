@@ -32,6 +32,14 @@ public class lc_394_Decode_String {
         }
         return ans.toString();
     }
+    // recursion practice
+    public static int sum(int k){
+        if (k > 0){
+            return k + sum(k - 1);
+        } else{
+            return 0;
+        }
+    }
 
     public static void main(String[] args){
         int[] nums1 = new int[]{0,1,2,4,5,7};
@@ -42,6 +50,10 @@ public class lc_394_Decode_String {
         String result = decodeString(stringA);
         //System.out.println(Arrays.toString(result));
         System.out.println((result));
+
+
+        int test = sum(3);
+        System.out.println(test);
     }
 
 
