@@ -15,10 +15,13 @@ public class lc_394_Decode_String {
         while (idx < s.length()) {
             char ch = s.charAt(idx);
             if (ch == ']') {
+                // this return is used to break the recursion
                 return ans.toString();
             } else if (ch == '[') {
                 idx++;
+
                 String str = helper(s);
+
                 while (repeat > 0) {
                     ans.append(str);
                     repeat--;
