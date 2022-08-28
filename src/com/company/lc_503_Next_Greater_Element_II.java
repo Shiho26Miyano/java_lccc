@@ -13,6 +13,8 @@ public class lc_503_Next_Greater_Element_II {
         while (!st.isEmpty()) res[st.pop()] = -1;
         return res;
     }
+
+
     public static void main(String[] args){
         int[] nums1 = new int[]{1,2,1};
         int[] nums2 = new int[]{1,3,4,2};
