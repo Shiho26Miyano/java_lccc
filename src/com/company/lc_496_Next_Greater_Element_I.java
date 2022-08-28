@@ -2,17 +2,20 @@ package com.company;
 import java.util.*;
 
 public class lc_496_Next_Greater_Element_I {
-    public static int[] nextGreaterElement(int[] findNums, int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>(); // map from x to next greater element of x
-        Stack<Integer> stack = new Stack<>();
-        for (int num : nums) {
-            while (!stack.isEmpty() && stack.peek() < num)
-                map.put(stack.pop(), num);
-            stack.push(num);
+    public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        HashMap<Integer, Integer> mapper = new HashMap<>();
+        Stack<Integer> stacker = new Stack<>();
+
+        for (int num : nums2){
+            if (!stacker.isEmpty() && stacker.peek() < num){
+                mapper.put(stacker.pop(), num);
+            }
+            stacker.push(num);
         }
-        for (int i = 0; i < findNums.length; i++)
-            findNums[i] = map.getOrDefault(findNums[i], -1);
-        return findNums;
+        for (int i = 0; i < nums1.length; i++){
+            nums1[i] = mapper.getOrDefault(nums1[i], -1);
+        }
+        return nums1;
     }
     public static void main(String[] args){
         int[] nums1 = new int[]{4,1,2};
