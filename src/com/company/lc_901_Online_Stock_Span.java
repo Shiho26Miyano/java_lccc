@@ -12,7 +12,7 @@ public class lc_901_Online_Stock_Span {
         while(!stack.isEmpty() && stack.peek()[0] <= price){
             span += stack.pop()[1];
         }
-        stack.add(new int[]{price, span});
+        stack.push(new int[]{price, span});
         return span;
     }
 
