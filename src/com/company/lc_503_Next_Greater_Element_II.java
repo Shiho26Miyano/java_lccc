@@ -2,18 +2,20 @@ package com.company;
 import java.util.*;
 public class lc_503_Next_Greater_Element_II {
     public static int[] nextGreaterElements(int[] nums) {
-        Stack<Integer> st = new Stack<>();
+
+        Stack<Integer> stacker = new Stack<>();
         int[] res = new int[nums.length];
-        for (int cnt = 0; cnt < 2; cnt++) {
-            for (int i = 0; i < nums.length; i++) {
-                while (!st.isEmpty() && nums[i] > nums[st.peek()]) res[st.pop()] = nums[i];
-                if (cnt == 0) st.push(i);
+        Arrays.fill(res, -1);
+        for (int cnt = 0; cnt < 2; cnt++){
+            for (int i = 0; i < nums.length; i++){
+                while (!stacker.isEmpty() && nums[stacker.peek()] < nums[i])
+                    res[stacker.pop()] = nums[i];
+                if (cnt == 0) stacker.push(i);
             }
         }
-        while (!st.isEmpty()) res[st.pop()] = -1;
+
         return res;
     }
-
 
     public static void main(String[] args){
         int[] nums1 = new int[]{1,2,1};
