@@ -7,16 +7,18 @@ public class lc_496_Next_Greater_Element_I {
         Stack<Integer> stacker = new Stack<>();
 
         for (int num : nums2){
-            if (!stacker.isEmpty() && stacker.peek() < num){
+            while (!stacker.isEmpty() && stacker.peek() < num)
                 mapper.put(stacker.pop(), num);
-            }
             stacker.push(num);
+
+
         }
         for (int i = 0; i < nums1.length; i++){
             nums1[i] = mapper.getOrDefault(nums1[i], -1);
         }
         return nums1;
     }
+
     public static void main(String[] args){
         int[] nums1 = new int[]{4,1,2};
         int[] nums2 = new int[]{1,3,4,2};
