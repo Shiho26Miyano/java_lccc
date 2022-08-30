@@ -37,7 +37,7 @@ public class lc_907_Sum_of_Subarray_Minimums {
     }
     public static void main(String[] args){
         int[] nums1 = new int[]{3,1,2,4};
-        int[] nums2 = new int[]{1,3,4,2};
+        //int[] nums2 = new int[]{1,3,4,2};
         //int[] nums2 = new int[]{2,2,3};
         int val = 2;
         int ladders = 1;
