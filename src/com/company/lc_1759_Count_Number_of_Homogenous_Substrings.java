@@ -3,11 +3,13 @@ import java.util.*;
 
 public class lc_1759_Count_Number_of_Homogenous_Substrings {
     public static int countHomogenous(String s) {
-        int res = 0, cur = 0, count = 0, mod = 1_000_000_007;
-        for (int i = 0; i < s.length(); ++i) {
+        int count = 0, res = 0, cur = 0, mod = 1_000_000_007;
+
+        for (int i = 0; i < s.length(); i++){
             count = s.charAt(i) == cur ? count + 1 : 1;
             cur = s.charAt(i);
             res = (res + count) % mod;
+
         }
         return res;
     }
