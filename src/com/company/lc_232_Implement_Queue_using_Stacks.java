@@ -39,4 +39,3 @@ public class lc_232_Implement_Queue_using_Stacks {
         return s1.isEmpty() && s2.isEmpty();
     }
 }
-
