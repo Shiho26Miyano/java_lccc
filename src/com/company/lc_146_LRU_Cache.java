@@ -13,13 +13,17 @@ public class lc_146_LRU_Cache {
     }
 
     public int get(int key) {
-        if(cache.containsKey(key)){
-            return cache.get(key);
-        }
-        return -1;
+        return cache.getOrDefault(key, -1);
     }
 
     public void put(int key, int value) {
         cache.put(key, value);
     }
 }
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
