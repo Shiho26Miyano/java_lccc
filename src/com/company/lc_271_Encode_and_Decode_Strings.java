@@ -24,7 +24,7 @@ public class lc_271_Encode_and_Decode_Strings {
             // find the Nth /
             int slash = s.indexOf('/', i);
             //String substring(begIndex, endIndex
-            // find the Nth length until the Nth /
+            // find the Nth /, i is the previous positoin of /
             int size = Integer.valueOf(s.substring(i, slash));
             // find the end of  Nth string after Nth length and / and string
             i = size + slash + 1;
