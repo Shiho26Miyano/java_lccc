@@ -12,25 +12,20 @@ public class lc_36_Valid_Sudoku {
 
         for (int r = 0; r < N; r++) {
             for (int c = 0; c < N; c++) {
-                // Check if the position is filled with number
                 if (board[r][c] == '.') {
                     continue;
                 }
-                int pos = board[r][c] - '1';
-
-                // Check the row
+                int pos = board[r][c] - '1' ;
                 if (rows[r][pos] == 1) {
                     return false;
                 }
                 rows[r][pos] = 1;
-
-                // Check the column
                 if (cols[c][pos] == 1) {
                     return false;
                 }
                 cols[c][pos] = 1;
 
-                // Check the box
+                //  row_index * number_of_columns + column_index will return a continuous number
                 int idx = (r / 3) * 3 + c / 3;
                 if (boxes[idx][pos] == 1) {
                     return false;
