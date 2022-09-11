@@ -20,14 +20,16 @@ public class lc_271_Encode_and_Decode_Strings {
         List<String> ret = new ArrayList<>();
         int i = 0;
         while (i < s.length()){
+            //beginIndex :  the begin index, inclusive.
+            //endIndex :  the end index, exclusive.
             //StringName.IndexOf(char, startingPosition);
-            // find the Nth /
+            // find the Nth /, i is the previous positoin of /
             int slash = s.indexOf('/', i);
             //String substring(begIndex, endIndex
-            // find the Nth /, i is the previous positoin of /
+            // find the size of string
             int size = Integer.valueOf(s.substring(i, slash));
             // find the end of  Nth string after Nth length and / and string
-            i = size + slash + 1;
+            i = 1 + slash + size;
             ret.add(s.substring(slash + 1, i));
 
         }
