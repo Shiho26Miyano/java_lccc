@@ -5,7 +5,7 @@ import java.util.*;
 public class lc_271_Encode_and_Decode_Strings {
 
     // Encodes a list of strings to a single string.
-    public String encode(List<String> strs) {
+    public static String encode(List<String> strs) {
         StringBuilder sb = new StringBuilder();
         for (String s : strs){
             sb.append(s.length()).append('/').append(s);
@@ -16,14 +16,14 @@ public class lc_271_Encode_and_Decode_Strings {
     }
 
     // Decodes a single string to a list of strings.
-    public List<String> decode(String s) {
+    public static List<String> decode(String s) {
         List<String> ret = new ArrayList<>();
         int i = 0;
         while (i < s.length()){
             //StringName.IndexOf(char, startingPosition);
             // find the Nth /
             int slash = s.indexOf('/', i);
-            System.out.println(s.substring(i,slash));
+            //String substring(begIndex, endIndex
             // find the Nth length until the Nth /
             int size = Integer.valueOf(s.substring(i, slash));
             // find the end of  Nth string after Nth length and / and string
@@ -32,8 +32,6 @@ public class lc_271_Encode_and_Decode_Strings {
 
         }
         return ret;
-
-    }
 
     }
 
