@@ -2,24 +2,27 @@ package com.company;
 import java.util.*;
 public class lc_424_Longest_Repeating_Character_Replacement {
     public static int characterReplacement(String s, int k) {
-        int[] cArr = new int[26];
-        int maxCount = 0, start = 0, maxSize = 0;
-
+        // Make an array of size 26...
+        int[] arr = new int[26];
+        // Initialize largestCount, maxlen & beg pointer...
+        int largestCount = 0, beg = 0, maxlen = 0;
+        // Traverse all characters through the loop...
         for(int end = 0; end < s.length(); end ++){
-            cArr[s.charAt(end) - 'A']++;
-            maxCount = Math.max(maxCount, cArr[s.charAt(end) - 'A']);
-
-            // if max character frequency + distance between start and end is greater than k
-            // this means we have considered changing more than k charactres. So time to shrink window
-            if(end - start + 1 - maxCount > k){
-                cArr[s.charAt(start) - 'A']--;
-                start ++;
+            arr[s.charAt(end) - 'A']++;
+            // Get the largest count of a single, unique character in the current window...
+            largestCount = Math.max(largestCount, arr[s.charAt(end) - 'A']);
+            // We are allowed to have at most k replacements in the window...
+            // So, if max character frequency + distance between beg and end is greater than k...
+            // this means we have considered changing more than k charactres. So time to shrink window...
+            // Then there are more characters in the window than we can replace, and we need to shrink the window...
+            if(end - beg + 1 - largestCount > k){     // The main equation is: end - beg + 1 - largestCount...
+                arr[s.charAt(beg) - 'A']--;
+                beg ++;
             }
-
-            maxSize = Math.max(maxSize, end - start + 1);
+            // Get the maximum length of repeating character...
+            maxlen = Math.max(maxlen, end - beg + 1);     // end - beg + 1 = size of the current window...
         }
-
-        return maxSize;
+        return maxlen;      // Return the maximum length of repeating character...
     }
     public static void main(String[] args) {
         int[] intArray = new int[]{1, 3, 5, 6, 7};
