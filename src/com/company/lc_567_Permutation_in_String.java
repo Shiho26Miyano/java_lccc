@@ -15,7 +15,6 @@ public class lc_567_Permutation_in_String {
             arr1[s1.charAt(i) - 'a']++;
             arr2[s2.charAt(i) - 'a']++;
         }
-
         if(Arrays.equals(arr1, arr2)) return true;
 
         int front = 0;
