@@ -29,7 +29,6 @@ public class lc_567_Permutation_in_String {
         }
         return false;
     }
-
     public boolean matches(int[] s1map, int[] s2map) {
         for (int i = 0; i < 26; i++) {
             if (s1map[i] != s2map[i])
