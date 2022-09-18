@@ -1,7 +1,7 @@
 package com.company;
 import java.util.*;
 public class lc_424_Longest_Repeating_Character_Replacement {
-    public int characterReplacement(String s, int k) {
+    public static int characterReplacement(String s, int k) {
         int len = s.length();
         int[] count = new int[26];
         int start = 0, maxCount = 0, maxLength = 0;
