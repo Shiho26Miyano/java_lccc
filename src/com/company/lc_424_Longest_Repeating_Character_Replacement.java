@@ -1,19 +1,17 @@
 package com.company;
 import java.util.*;
 public class lc_424_Longest_Repeating_Character_Replacement {
-    public static int characterReplacement(String s, int k) {
-        int len = s.length();
-        int[] map = new int[26];
-        int start = 0, maxCount = 0, maxLength = 0;
-        for (int end = 0; end < len; end++) {
-            maxCount = Math.max(maxCount, ++map[s.charAt(end) - 'A']);
-            while (end - start + 1 - maxCount > k) {
-                map[s.charAt(start) - 'A']--;
-                start++;
-            }
-            maxLength = Math.max(maxLength, end - start + 1);
+    public static int characterReplacement(String s, int k){
+        int[] count = new int[128];
+        int max=0;
+        int start=0;
+        for(int end=0; end<s.length(); end++)
+        {
+            max = Math.max(max, ++count[s.charAt(end)]);
+            if(max+k<=end-start)
+                count[s.charAt(start++)]--;
         }
-        return maxLength;
+        return s.length()-start;
     }
     public static void main(String[] args) {
         int[] intArray = new int[]{1, 3, 5, 6, 7};
