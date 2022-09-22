@@ -1,6 +1,5 @@
 package com.company;
-
-import java.util.Arrays;
+import java.util.*;
 
 public class lc_069_Sqrt_x {
 
