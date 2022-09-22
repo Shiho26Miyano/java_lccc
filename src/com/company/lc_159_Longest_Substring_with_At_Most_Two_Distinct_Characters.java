@@ -3,33 +3,43 @@ import java.util.*;
 
 public class lc_159_Longest_Substring_with_At_Most_Two_Distinct_Characters {
     public int lengthOfLongestSubstringTwoDistinct(String s) {
-        int n = s.length();
-        if (n < 3) return n;
+        // [character, number of repetiotion]
+        Map<Character, Integer> map = new HashMap();
 
-        // sliding window left and right pointers
-        int left = 0;
-        int right = 0;
-        // hashmap character -> its rightmost position
-        // in the sliding window
-        HashMap<Character, Integer> hashmap = new HashMap<Character, Integer>();
+        int start = 0; // start of the window
+        int end = 0; // end of the window
+        int max = 0;
 
-        int max_len = 2;
+        while(end < s.length()) {
+            if(map.size() <= 2) {
+                // add new charater from the end pointer
+                Character newChar = s.charAt(end);
+                map.put(newChar, map.getOrDefault(newChar, 0) + 1); // increase the counter if we face this character
 
-        while (right < n) {
-            // when the slidewindow contains less than 3 characters
-            hashmap.put(s.charAt(right), right++);
+                // increase the size of window
+                end++;
+            } else {
+                // decrease the size of the window as far as we've reached the number of distinct characters at most two
+                // remove start character
+                Character charToRemove = s.charAt(start);
 
-            // slidewindow contains 3 characters
-            if (hashmap.size() == 3) {
-                // delete the leftmost character
-                int del_idx = Collections.min(hashmap.values());
-                hashmap.remove(s.charAt(del_idx));
-                // move left pointer of the slidewindow
-                left = del_idx + 1;
+                int counter = map.get(charToRemove) - 1;
+                if(counter < 1) {
+                    // there are no such characters in a row. Let's delete the character from the map
+                    map.remove(charToRemove);
+                } else {
+                    // update counter
+                    map.put(charToRemove, counter);
+                }
+                start++;
             }
 
-            max_len = Math.max(max_len, right - left);
+            // if we stil in the right amount of distinct characters calculate maximus
+            if(map.size() <= 2) {
+                max = Math.max(max, (end - start) + 0);
+            }
         }
-        return max_len;
+
+        return max;
     }
 }
