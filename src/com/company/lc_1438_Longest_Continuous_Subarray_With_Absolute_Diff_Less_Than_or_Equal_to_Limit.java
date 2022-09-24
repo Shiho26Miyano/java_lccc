@@ -2,18 +2,18 @@ package com.company;
 import java.util.*;
 
 public class lc_1438_Longest_Continuous_Subarray_With_Absolute_Diff_Less_Than_or_Equal_to_Limit {
-    public int longestSubarray(int[] A, int limit) {
-        int i = 0, j;
-        TreeMap<Integer, Integer> m = new TreeMap<>();
-        for (j = 0; j < A.length; j++) {
-            m.put(A[j], 1 + m.getOrDefault(A[j], 0));
-            if (m.lastEntry().getKey() - m.firstEntry().getKey() > limit) {
-                m.put(A[i], m.get(A[i]) - 1);
-                if (m.get(A[i]) == 0)
-                    m.remove(A[i]);
-                i++;
+    public int longestSubarray(int[] nums, int limit) {
+        int left = 0;
+        TreeSet<Integer> set = new TreeSet<>((a, b) -> nums[a] == nums[b] ? a - b : nums[a] - nums[b]);
+        set.add(0);
+        int res = 1;
+        for (int right = 1; right < nums.length; right++) {
+            set.add(right);
+            while (nums[set.last()] - nums[set.first()] > limit) {
+                set.remove(left++);
             }
+            res = Math.max(res, right - left + 1);
         }
-        return j - i;
+        return res;
     }
 }
