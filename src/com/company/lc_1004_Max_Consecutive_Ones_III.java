@@ -2,19 +2,13 @@ package com.company;
 
 public class lc_1004_Max_Consecutive_Ones_III {
 
-    public static int longestOnes(int[] nums, int k) {
-        int length1 = 0;
-        for (int i = 0, j = 0; j < nums.length; j++) {
-            if(nums[j] == 0) {
-                k--;
-            }
-            while(k < 0){
-                if(nums[i] == 0) k++;
-                i++;
-            }
-            length1 = Math.max(length1, j - i + 1);
+    public static int longestOnes(int[] A, int K) {
+        int i = 0, j;
+        for (j = 0; j < A.length; ++j) {
+            if (A[j] == 0) K--;
+            if (K < 0 && A[i++] == 0) K++;
         }
-        return length1;
+        return j - i;
     }
 
 
