@@ -3,16 +3,33 @@ import java.util.*;
 
 public class lc_1004_Max_Consecutive_Ones_III {
 
-    public static int longestOnes(int[] A, int K) {
-        int i = 0, j;
-        for (j = 0; j < A.length; ++j) {
-            if (A[j] == 0) K--;
-            if (K < 0 && A[i++] == 0) K++;
+    public static int longestOnes(int[] nums, int k) {
+        int l = 0, r;
+        for (r = 0; r < nums.length; r++){
+            if (nums[r] == 0) k--;
+            if (k < 0 ) {
+                if (nums[l] == 0)k++;
+                l++;
+            }
+
         }
-        return j - i;
+        return r - l;
+    }
+    public int longestOnes2(int[] nums, int k) {
+        int l = 0, best = 0, r;
+        for (r = 0; r < nums.length; r++){
+            if (nums[r] == 0) k--;
+            if (k < 0 ) {
+                if (nums[l] == 0)k++;
+                l++;
+            }
+            best = Math.max(best, r - l + 1);
+
+        }
+        return best;
     }
 
-    public int longestOnes2(int[] nums, int k) {
+    public int longestOnes3(int[] nums, int k) {
         HashMap<Integer, Integer> count = new HashMap<>();
 
         int l = 0, r;
@@ -29,7 +46,7 @@ public class lc_1004_Max_Consecutive_Ones_III {
 
     }
 
-    public int longestOnes3(int[] nums, int k) {
+    public int longestOnes4(int[] nums, int k) {
         HashMap<Integer, Integer> count = new HashMap<>();
 
         int l = 0, best = 0;
