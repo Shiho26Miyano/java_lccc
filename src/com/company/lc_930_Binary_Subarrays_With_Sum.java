@@ -9,18 +9,18 @@ public class lc_930_Binary_Subarrays_With_Sum {
 
     public int allPoss(int[] A, int S) {
         if (S < 0) return 0;
+
         int best = 0, l = 0;
-        for (int r = 0; r < A.length; r++) {
+        for (int r = 0; r < A.length; r++){
             S = S - A[r];
             while (S < 0){
                 S = S + A[l];
                 l++;
-
             }
-
             best = best + r - l + 1;
         }
         return best;
+
     }
 }
 
