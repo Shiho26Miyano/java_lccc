@@ -1,7 +1,5 @@
 package com.company;
 import java.util.*;
-
-
 public class lc_1358_Number_of_Substrings_Containing_All_Three_Characters {
     public int numberOfSubstrings(String s) {
         int count[] = {0, 0, 0}, best = 0 , l = 0;
