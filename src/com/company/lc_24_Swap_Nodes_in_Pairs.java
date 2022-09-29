@@ -10,6 +10,23 @@ public class lc_24_Swap_Nodes_in_Pairs {
         n.next = head;
         return n;
     }
+    public ListNodeLc24 swapPairs3(ListNodeLc24 head) {
+        // If the list has no node or has only one node left.
+        if ((head == null) || (head.next == null)) {
+            return head;
+        }
+
+        // Nodes to be swapped
+        ListNodeLc24 firstNode = head;
+        ListNodeLc24 secondNode = head.next;
+
+        // Swapping
+        firstNode.next  = swapPairs(secondNode.next);
+        secondNode.next = firstNode;
+
+        // Now the head is the second node
+        return secondNode;
+    }
     //iteration
     public ListNodeLc24 swapPairs2(ListNodeLc24 head) {
         if (head == null || head.next == null) return head;
