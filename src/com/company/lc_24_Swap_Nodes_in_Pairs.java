@@ -33,3 +33,4 @@ class ListNodeLc24{
     ListNodeLc24(int val) {this.val = val;}
     ListNodeLc24(int val, ListNodeLc24 next) { this.val = val; this.next = next; }
 }
+
