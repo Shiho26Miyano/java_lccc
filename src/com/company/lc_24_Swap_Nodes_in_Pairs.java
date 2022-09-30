@@ -15,7 +15,6 @@ public class lc_24_Swap_Nodes_in_Pairs {
         if ((head == null) || (head.next == null)) {
             return head;
         }
-
         // Nodes to be swapped
         ListNodeLc24 firstNode = head;
         ListNodeLc24 secondNode = head.next;
