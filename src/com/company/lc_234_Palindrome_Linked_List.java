@@ -12,7 +12,6 @@ public class lc_234_Palindrome_Linked_List {
         }
         return true;
     }
-
     public boolean isPalindrome(ListNodeLc234 head) {
         frontPointer = head;
         return recursivelyCheck(head);
