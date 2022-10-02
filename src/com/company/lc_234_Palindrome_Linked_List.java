@@ -1,6 +1,5 @@
 package com.company;
 import java.util.*;
-
 public class lc_234_Palindrome_Linked_List {
     private ListNodeLc234 frontPointer;
 
