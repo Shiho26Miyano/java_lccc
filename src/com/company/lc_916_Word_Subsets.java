@@ -2,6 +2,9 @@ package com.company;
 import java.util.*;
 
 public class lc_916_Word_Subsets {
+    //For each word b in B,
+    //we use function counter to count occurrence of each letter.
+    //We take the maximum occurrences of counts, and use it as a filter of A.
     public List<String> wordSubsets(String[] words1, String[] words2) {
         int[] count = new int[26], tmp;
         int i;
@@ -19,7 +22,7 @@ public class lc_916_Word_Subsets {
                     break;
             }
             if(i == 26) res.add(word);
-            
+
         }
         return res;
 
