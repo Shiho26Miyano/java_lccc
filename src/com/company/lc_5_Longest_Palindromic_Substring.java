@@ -28,7 +28,6 @@ public class lc_5_Longest_Palindromic_Substring {
                 right++;
             }
 
-
             // left + 1 and right - 1 are actually the start and end index of the Palindromic string
             // we don't set "right" because String.substring function required end index exclusively
             left = left + 1;
