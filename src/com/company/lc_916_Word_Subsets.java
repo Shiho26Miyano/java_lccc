@@ -22,10 +22,8 @@ public class lc_916_Word_Subsets {
                     break;
             }
             if(i == 26) res.add(word);
-
         }
         return res;
-
     }
 
     int[] counter(String word){
