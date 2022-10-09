@@ -23,7 +23,7 @@ public class lc_916_Word_Subsets {
                 if (tmp[i] < count[i])
                     break;
             }
-            if(i == 26) res.add(word);
+            if(i > 25) res.add(word);
         }
         return res;
     }
