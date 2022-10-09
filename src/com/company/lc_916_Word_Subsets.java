@@ -10,6 +10,7 @@ public class lc_916_Word_Subsets {
         int i;
         for (String word: words2){
             tmp = counter(word);
+            // 创建mapping list把所有word打散算出所有的frequency
             for (i = 0; i < 26; i++){
                 count[i] = Math.max(count[i], tmp[i]);
             }
@@ -17,6 +18,7 @@ public class lc_916_Word_Subsets {
         List<String> res = new ArrayList<>();
         for (String word: words1){
             tmp = counter(word);
+            //filter每一个词character的frequency是否大于等于mapping list；如果小于那就不要了
             for(i = 0; i < 26; i++){
                 if (tmp[i] < count[i])
                     break;
