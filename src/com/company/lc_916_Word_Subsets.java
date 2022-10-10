@@ -24,7 +24,7 @@ public class lc_916_Word_Subsets {
             for (i = 0; i < 26; i++){
                 if (tmp[i] < countMap[i]) break;
             }
-            if (i > 25) ans.add(word);
+            if (i == 26) ans.add(word);
         }
         return ans;
 
