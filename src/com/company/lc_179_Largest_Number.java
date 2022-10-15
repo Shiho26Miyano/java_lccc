@@ -14,9 +14,7 @@ public class lc_179_Largest_Number {
                 String s1 = o1 + o2, s2 = o2 + o1;
                 return s2.compareTo(s1);
             }
-        });
-
-        if (numStr[0].equals("0")) return "0";
+        });        if (numStr[0].equals("0")) return "0";
         StringBuilder res = new StringBuilder(); // use StringBuilder to concact
         for (String str : numStr) res.append(str);
         return res.toString();
