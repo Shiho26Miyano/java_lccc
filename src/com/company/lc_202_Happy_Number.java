@@ -2,25 +2,25 @@ package com.company;
 import java.util.*;;
 
 public class lc_202_Happy_Number {
-    private static int getNext(int n) {
-        int totalSum = 0;
-        while (n > 0) {
-            int d = n % 10;
-            n = n / 10;
-            totalSum += d * d;
-        }
-        return totalSum;
-    }
-
     public static boolean isHappy(int n) {
-        Set<Integer> seen = new HashSet<>();
-        while (n != 1 && !seen.contains(n)) {
-            seen.add(n);
-            n = getNext(n);
-        }
-        return n == 1;
-    }
+        Set<Integer> inLoop = new HashSet<Integer>();
+        int squareSum,remain;
+        while (inLoop.add(n)) {
+            squareSum = 0;
+            while (n > 0) {
+                remain = n%10;
+                squareSum += remain*remain;
+                n /= 10;
+            }
+            if (squareSum == 1)
+                return true;
+            else
+                n = squareSum;
 
+        }
+        return false;
+
+    }
 
 
     public static void main(String[] args){
