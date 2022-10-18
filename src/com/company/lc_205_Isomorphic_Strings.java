@@ -3,6 +3,7 @@ import java.util.*;
 
 public class lc_205_Isomorphic_Strings {
     //1.  use small arrays as lookup tables. it uses the arrays to minic two hash table, but more efficient than hash table.
+    //idea : when u encounter the char for the first time then u map it with some char of second string , now if u encounter that char for 2nd time then you go and fetch the prev mapping and compare it to the current char of second string , if (match) then fine else not isomorphic !
     public boolean isIsomorphic(String sString, String tString) {
 
         char[] s = sString.toCharArray();
