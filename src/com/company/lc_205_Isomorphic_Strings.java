@@ -42,10 +42,10 @@ public class lc_205_Isomorphic_Strings {
                 else
                     return false;
             }else{
+                //containsValue!! not containsKey!!!
                 if(!map.containsValue(b))
                     map.put(a,b);
                 else return false;
-
             }
         }
         return true;
