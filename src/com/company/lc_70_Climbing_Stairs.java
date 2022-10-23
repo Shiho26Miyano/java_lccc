@@ -3,16 +3,20 @@ import java.util.*;;
 
 public class lc_70_Climbing_Stairs {
     public int climbStairs(int n) {
-        Map<Integer, Integer> memo = new HashMap<>();
-        memo.put(1, 1);
-        memo.put(2, 2);
-        return climbStairs(n, memo);
+        int memo[] = new int[n + 1];
+        return climb_Stairs(0, n, memo);
     }
-    private int climbStairs(int n, Map<Integer, Integer> memo) {
-        if (memo.containsKey(n)) {
-            return memo.get(n);
+    public int climb_Stairs(int i, int n, int memo[]) {
+        if (i > n) {
+            return 0;
         }
-        memo.put(n, climbStairs(n - 1, memo) + climbStairs(n - 2, memo));
-        return memo.get(n);
+        if (i == n) {
+            return 1;
+        }
+        if (memo[i] > 0) {
+            return memo[i];
+        }
+        memo[i] = climb_Stairs(i + 1, n, memo) + climb_Stairs(i + 2, n, memo);
+        return memo[i];
     }
 }
