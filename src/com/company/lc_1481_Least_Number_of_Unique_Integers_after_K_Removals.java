@@ -14,5 +14,3 @@ public class lc_1481_Least_Number_of_Unique_Integers_after_K_Removals {
         return n - remove;
     }
 }
-
-
