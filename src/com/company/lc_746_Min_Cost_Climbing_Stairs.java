@@ -14,12 +14,10 @@ public class lc_746_Min_Cost_Climbing_Stairs {
         if (i <= 1) {
             return 0;
         }
-
         // Check if we have already calculated minimumCost(i)
         if (memo.containsKey(i)) {
             return memo.get(i);
         }
-
         // If not, cache the result in our hash map and return it
         int downOne = cost[i - 1] + minimumCost(i - 1, cost);
         int downTwo = cost[i - 2] + minimumCost(i - 2, cost);
