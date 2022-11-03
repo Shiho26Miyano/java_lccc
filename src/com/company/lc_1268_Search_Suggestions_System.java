@@ -23,6 +23,5 @@ public class lc_1268_Search_Suggestions_System {
 
         while (res.size() < searchWord.length()) res.add(new ArrayList<>());
         return res;
-
     }
 }
