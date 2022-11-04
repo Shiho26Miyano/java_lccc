@@ -12,7 +12,6 @@ public class lc_1268_Search_Suggestions_System {
         for (int i = 0; i < products.length; i++) {
             map.put(products[i], i);
         }
-
         String key = "";
         for (char c : searchWord.toCharArray()) {
             key += c;
