@@ -23,4 +23,35 @@ public class lc_1268_Search_Suggestions_System {
         while (res.size() < searchWord.length()) res.add(new ArrayList<>());
         return res;
     }
+
+
+    public static void main(String args[])
+    {
+
+        // create an empty TreeMap
+        TreeMap<Integer, String>
+                numMap = new TreeMap<Integer, String>();
+
+        // Insert the values
+        numMap.put(6, "Six");
+        numMap.put(1, "One");
+        numMap.put(5, "Five");
+        numMap.put(3, "Three");
+        numMap.put(8, "Eight");
+        numMap.put(10, "Ten");
+
+        // Print the Values of TreeMap
+        System.out.println("TreeMap: " + numMap.toString());
+
+        try {
+            // Passing null as parameter to floorKey()
+            // This will throw exception
+            System.out.println(numMap.floorKey(null));
+        }
+        catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
+    }
 }
+
+
