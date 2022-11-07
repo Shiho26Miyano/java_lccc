@@ -1,7 +1,7 @@
 package com.company;
 import java.util.*;
 
-public class lc_049_Group_Anagrams {
+public class lc_49_Group_Anagrams {
 
     public static List<List<String>> groupAnagrams(String[] strs) {
         if (strs.length == 0) return new ArrayList();
