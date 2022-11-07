@@ -1,7 +1,7 @@
 package com.company;
 import java.util.*;
 
-public class lc_069_Sqrt_x {
+public class lc_69_Sqrt_x {
 
     public static int mySqrt(int x) {
 
