@@ -15,7 +15,8 @@ public class lc_1268_Search_Suggestions_System {
         //2.convert products Arrays to a fixed-size List object
         //3.create answer ArrayList res, create empty TreeMap map
         //4.fille the empty TreeMap k/v: products[i],
-        //5. find ceillingKey and floorKey, get subList(int fromIndex, int toIndex)
+        //5. find ceillingKey and floorKey, get subList(int fromIndex, int toIndex).
+        //***  ceiling is trying to get lowerBound of prefix, while floor is getting the upperbound of prefix
 
         Arrays.sort(products);
         List<String> productsList = Arrays.asList(products);
@@ -30,10 +31,7 @@ public class lc_1268_Search_Suggestions_System {
         for (char c : searchWord.toCharArray()){
             key += c;
             String ceilingKey = map.ceilingKey(key);
-            System.out.println(" Key is " + key);
-            System.out.print("ceilingKey is " + ceilingKey);
             String floorKey = map.floorKey(key + "~");
-            System.out.print("floorKey is " + floorKey);
             if (ceilingKey == null || floorKey == null) break;
             res.add(productsList.subList(map.get(ceilingKey), Math.min(map.get(ceilingKey) + 3, map.get(floorKey) + 1)));
         }
