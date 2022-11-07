@@ -14,8 +14,8 @@ public class lc_1268_Search_Suggestions_System {
         //1.sort Arrays products as lexicographically order
         //2.convert products Arrays to a fixed-size List object
         //3.create answer ArrayList res, create empty TreeMap map
-        //4.fille the empty TreeMap k/v: products[i], i
-        //
+        //4.fille the empty TreeMap k/v: products[i],
+        //5. find ceillingKey and floorKey, get subList(int fromIndex, int toIndex)
 
         Arrays.sort(products);
         List<String> productsList = Arrays.asList(products);
