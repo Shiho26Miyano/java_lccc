@@ -1,5 +1,5 @@
 package com.company;
-import java.util.*;;
+import java.util.*;
 public class lc_1672_Richest_Customer_Wealt {
     public int maximumWealth(int[][] accounts) {
         int res = 0;
