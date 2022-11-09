@@ -1,6 +1,5 @@
 package com.company;
 import java.util.*;
-
 public class lc_918_Maximum_Sum_Circular_Subarray {
     public int maxSubarraySumCircular(int[] A) {
         int total = 0, maxSum = A[0], curMax = 0, minSum = A[0], curMin = 0;
