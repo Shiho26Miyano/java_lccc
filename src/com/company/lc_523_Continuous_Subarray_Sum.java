@@ -23,7 +23,6 @@ public class lc_523_Continuous_Subarray_Sum {
             if (!map.containsKey(sum % k))
                 map.put(sum % k, i);
         }
-
         return false;
     }
 
