@@ -25,5 +25,4 @@ public class lc_523_Continuous_Subarray_Sum {
         }
         return false;
     }
-
 }
