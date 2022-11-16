@@ -5,6 +5,7 @@ public class lc_325_Maximum_Size_Subarray_Sum_Equals_k {
     public int maxSubArrayLen1(int[] nums, int k) {
         Map<Integer, Integer> hm = new HashMap<>();
         int result = 0, sum = 0;
+        // incase of sum-k = 0, we'd better have put(0,-1) in map so that current index - (-1) is the correct size of the subarray that sums up to k.
         hm.put(0, -1);
         for(int i = 0; i < nums.length; i++) {
             sum += nums[i];
@@ -29,7 +30,6 @@ public class lc_325_Maximum_Size_Subarray_Sum_Equals_k {
 
             prefixSums.putIfAbsent(sum, i);
         }
-
         return maxLength;
     }
 }
