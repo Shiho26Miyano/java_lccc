@@ -1,5 +1,5 @@
 package com.company;
-
+import java.util.*;
 public class lc_303_Range_Sum_Query_Immutable {
 
     int[] nums;
