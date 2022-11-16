@@ -3,14 +3,14 @@ import java.util.*;
 
 public class lc_325_Maximum_Size_Subarray_Sum_Equals_k {
     public int maxSubArrayLen1(int[] nums, int k) {
-        Map<Integer, Integer> hm = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         int result = 0, sum = 0;
         // incase of sum-k = 0, we'd better have put(0,-1) in map so that current index - (-1) is the correct size of the subarray that sums up to k.
-        hm.put(0, -1);
-        for(int i = 0; i < nums.length; i++) {
+        map.put(0, -1);
+        for (int i = 0; i < nums.length; i++){
             sum += nums[i];
-            if (hm.containsKey(sum - k)) result = Math.max(i - hm.get(sum - k), result);
-            if (!hm.containsKey(sum)) hm.put(sum, i);
+            if (map.containsKey(sum - k)) result = Math.max(i - map.get(sum - k), result);
+            if (!map.containsKey(sum)) map.put(sum, i);
         }
         return result;
     }
