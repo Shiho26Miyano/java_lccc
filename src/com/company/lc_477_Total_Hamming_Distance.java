@@ -14,3 +14,5 @@ public class lc_477_Total_Hamming_Distance {
         return res;
     }
 }
+
+
