@@ -2,21 +2,15 @@ package com.company;
 import java.util.*;
 
 public class lc_524_Longest_Word_in_Dictionary_through_Deleting {
-    public boolean isSubsequence(String x, String y) {
-        int j = 0;
-        for (int i = 0; i < y.length() && j < x.length(); i++)
-            if (x.charAt(j) == y.charAt(i))
-                j++;
-        return j == x.length();
+    public String findLongestWord(String s, List<String> d) {
+        String res="";
+        for (String c: d)
+            if ((c.length()>res.length() || c.length()==res.length() && c.compareTo(res)<0) && isSubseq(c, s)) res=c;
+        return res;
     }
-    public String findLongestWord(String s, List < String > d) {
-        String max_str = "";
-        for (String str: d) {
-            if (isSubsequence(str, s)) {
-                if (str.length() > max_str.length() || (str.length() == max_str.length() && str.compareTo(max_str) < 0))
-                    max_str = str;
-            }
-        }
-        return max_str;
+    public boolean isSubseq(String a, String b){
+        int i=-1, j=-1;
+        while (++i<a.length()) if ((j=b.indexOf(a.charAt(i), j+1))==-1) return false;
+        return true;
     }
 }
