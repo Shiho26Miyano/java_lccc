@@ -7,7 +7,8 @@ public class lc_524_Longest_Word_in_Dictionary_through_Deleting {
         for (String dictWord : d) {
             int i = 0;
             for (char c : s.toCharArray())
-                if (i < dictWord.length() && c == dictWord.charAt(i)) i++;
+                if (i < dictWord.length() && c == dictWord.charAt(i))
+                    i++;
 
             if (i == dictWord.length() && dictWord.length() >= longest.length())
                 if (dictWord.length() > longest.length() || dictWord.compareTo(longest) < 0)
