@@ -8,19 +8,17 @@ public class lc_696_Count_Binary_Substrings {
 
 
     public static int countBinarySubstrings(String s) {
-        int ans = 0, prev = 0, cur = 1;
-        for (int i = 1; i < s.length(); i++) {
-            if (s.charAt(i-1) != s.charAt(i)) {
-                ans += Math.min(prev, cur);
-                prev = cur;
-                cur = 1;
-            } else {
-                cur++;
-            }
+        if(s==null || s.length()<=1) return 0;
+        int res =0;
+        int preCnt = 0, curCnt = 1;
+        char[] crs = s.toCharArray();
+        for(int i=1; i<crs.length; i++){
+            if(crs[i]==crs[i-1]) curCnt++;
+            else {preCnt = curCnt; curCnt = 1;}
+            if(preCnt>=curCnt) res++;
         }
-        return ans + Math.min(prev, cur);
+        return res;
     }
-
     public static void main(String[] args){
         String x = "00110011";
         System.out.println(countBinarySubstrings(x));
