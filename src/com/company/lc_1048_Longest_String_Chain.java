@@ -4,7 +4,7 @@ import java.util.*;
 public class lc_1048_Longest_String_Chain {
     public int longestStrChain(String[] words) {
         Map<String, Integer> dp = new HashMap<>();
-        Arrays.sort(words, (a, b)->a.length() - b.length());
+        Arrays.sort(words, (a, b) -> a.length() - b.length());
         int res = 0;
         for (String word : words) {
             int best = 0;
