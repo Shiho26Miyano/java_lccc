@@ -1,6 +1,5 @@
 package com.company;
 import java.util.*;
-
 public class lc_1048_Longest_String_Chain {
     public int longestStrChain(String[] words) {
         Map<String, Integer> dp = new HashMap<>();
