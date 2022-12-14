@@ -20,7 +20,6 @@ public class lc_1048_Longest_String_Chain {
             res = Math.max(res, best);
         }
         return res;
-
     }
 }
 
