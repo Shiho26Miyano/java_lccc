@@ -8,17 +8,17 @@ public class lc_1048_Longest_String_Chain {
     //Finally return the longest word chain
     // substring: public String substring(int begIndex, inclusive); public String substring(int begIndex inclusive, int endIndex exclusive)
     public int longestStrChain(String[] words) {
-        Map<String, Integer>dp = new HashMap<>();
+        Map<String, Integer> foundInPrev = new HashMap<>();
         Arrays.sort(words, (a, b)->a.length() - b.length());
         int res = 0;
         for (String word: words){
-            int best = 0;
+            int foundBest = 0;
             for (int i = 0; i < word.length(); i++){
                 String prev = word.substring(0, i) + word.substring(i + 1);
-                best = Math.max(best, dp.getOrDefault(prev, 0 )+ 1);
+                foundBest = Math.max(foundBest, foundInPrev.getOrDefault(prev, 0) + 1);
             }
-            dp.put(word, best);
-            res = Math.max(res, best);
+            foundInPrev.put(word, foundBest);
+            res = Math.max(res, foundBest);
         }
         return res;
 
