@@ -6,6 +6,7 @@ public class lc_1048_Longest_String_Chain {
     //For each word, loop on all possible previous word with 1 letter missing.
     //If we have seen this previous word, add the current word to the longest chain for the current word.
     //Finally return the longest word chain
+    // substring: public String substring(int begIndex, inclusive); public String substring(int begIndex inclusive, int endIndex exclusive)
     public int longestStrChain(String[] words) {
         Map<String, Integer>dp = new HashMap<>();
         Arrays.sort(words, (a, b)->a.length() - b.length());
