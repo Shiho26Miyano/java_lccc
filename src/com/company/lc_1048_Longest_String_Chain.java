@@ -8,7 +8,6 @@ public class lc_1048_Longest_String_Chain {
     //Finally return the longest word chain
     // substring: public String substring(int begIndex, inclusive); public String substring(int begIndex inclusive, int endIndex exclusive)
     //  We store this result in a map where key is the word and value is the sequence length. By doing this we ensure that, for each word that we encounter, we already know the result of all of its possible predecessors.
-
     public int longestStrChain(String[] words) {
         Map<String, Integer> foundInPrev = new HashMap<>();
         Arrays.sort(words, (a, b)->a.length() - b.length());
@@ -25,8 +24,6 @@ public class lc_1048_Longest_String_Chain {
         return res;
     }
 }
-
-
 
 
 
