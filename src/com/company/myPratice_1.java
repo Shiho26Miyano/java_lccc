@@ -5,7 +5,8 @@ public class myPratice_1 {
     public static int recurSum(int k){
         if (k > 0){
             return k + recurSum(k - 1);
-        } else{
+
+        }else{
             return 0;
         }
     }
