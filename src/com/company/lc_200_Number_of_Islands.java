@@ -1,5 +1,9 @@
 package com.company;
 import java.util.*;
+// 1. scan the 2D Matrix, if a node contains '1', it is a root node that tirggers a DFS.
+// 2. During the DFS, every visited node should be flipped to '0' after visited
+// 3. Count the number of root nodes that trigger DFS.
+// This number would be the nubmer of islands since each DFS starting at some root identifies an island 
 
 public class lc_200_Number_of_Islands {
     void dfs(char[][] M, int r, int c) {
