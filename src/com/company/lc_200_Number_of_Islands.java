@@ -20,7 +20,6 @@ public class lc_200_Number_of_Islands {
         if(M == null || M.length == 0){
             return 0;
         }
-
         int count = 0;
         for (int r = 0; r < M.length; r++){
             for (int c = 0 ; c < M[0].length; c++){
@@ -33,6 +32,4 @@ public class lc_200_Number_of_Islands {
 
         return count;
     }
-
-
 }
