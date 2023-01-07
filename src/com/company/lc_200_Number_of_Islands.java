@@ -3,10 +3,8 @@ import java.util.*;
 
 public class lc_200_Number_of_Islands {
     void dfs(char[][] M, int r, int c) {
-        int nr = M.length;
-        int nc = M[0].length;
 
-        if (r < 0 || c < 0 || r >= nr || c >= nc || M[r][c] == '0') {
+        if (r < 0 || c < 0 || r >= M.length || c >= M[0].length || M[r][c] == '0') {
             return;
         }
 
