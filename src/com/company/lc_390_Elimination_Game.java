@@ -16,9 +16,6 @@ package com.company;
 //left(n)=2(n/2 -left(n/2)+1)
 
 public class lc_390_Elimination_Game {
-
-
-
     public int lastRemaining(int n) {
         if(n==1)
             return n;
