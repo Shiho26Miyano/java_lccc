@@ -27,7 +27,7 @@ public class lc_390_Elimination_Game {
     public int lastRemaining(int n) {
         if(n==1)
             return n;
-        return 2*(1+n/2-lastRemaining(n/2));
+        return 2*(n/2-lastRemaining(n/2) + 1);
 
     }
 }
