@@ -1,11 +1,11 @@
 package com.company;
-
+import java.util.*;
 public class lc_284_Peeking_Iterator {
 
     private Iterator<Integer> iter;
     private Integer peekedValue = null;
 
-    public PeekingIterator(Iterator<Integer> iterator) {
+    public void PeekingIterator(Iterator<Integer> iterator) {
         iter = iterator;
     }
 
@@ -24,7 +24,7 @@ public class lc_284_Peeking_Iterator {
         return peekedValue;
     }
 
-    @Override
+
     public Integer next() {
         /* Firstly, we need to check if we have a value already
          * stored in the peekedValue variable. If we do, we need to
@@ -44,7 +44,7 @@ public class lc_284_Peeking_Iterator {
         return iter.next();
     }
 
-    @Override
+
     public boolean hasNext() {
         /* If there's a value waiting in peekedValue, or if there are values
          * remaining in the iterator, we should return true. */
