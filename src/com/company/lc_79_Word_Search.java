@@ -15,7 +15,7 @@ public class lc_79_Word_Search {
         return false;
     }
 
-    private boolean dfs(int row, int col, int index, char[][] board, String word) {
+    public boolean dfs(int row, int col, int index, char[][] board, String word) {
         /*  1. out of bound
             2. already visited
             3. not match    */
@@ -51,7 +51,7 @@ public class lc_79_Word_Search {
         return false;
     }
 
-    private int checkBound(int row, int col, char[][] board) {
+    public int checkBound(int row, int col, char[][] board) {
         if (row == -1 || row == board.length || col == -1 || col == board[0].length) {
             return -1;
         }
