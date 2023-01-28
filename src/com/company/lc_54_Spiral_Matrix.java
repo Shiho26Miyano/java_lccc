@@ -26,5 +26,3 @@ public class lc_54_Spiral_Matrix {
         return res;
     }
 }
-
-
