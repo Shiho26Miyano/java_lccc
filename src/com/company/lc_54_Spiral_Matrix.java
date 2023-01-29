@@ -22,10 +22,6 @@ public class lc_54_Spiral_Matrix {
             for (int d = bottom - 1; d >=top + 1 && res.size() < rows * cols; d--)
                 res.add(matrix[d][left]);
 
-
-
-
-
             left++; right--; top++; bottom--;
         }
         return res;
