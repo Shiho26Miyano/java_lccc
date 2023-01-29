@@ -5,23 +5,28 @@ public class lc_54_Spiral_Matrix {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new LinkedList<>();
         if (matrix == null || matrix.length == 0) return res;
-        int row = matrix.length, col = matrix[0].length;
-        int up = 0,  down = row - 1;
-        int left = 0, right = col - 1;
-        while (res.size() < row * col) {
-            for (int j = left; j <= right && res.size() < row * col; j++)
-                res.add(matrix[up][j]);
+        int rows = matrix.length, cols = matrix[0].length;
+        int top = 0, bottom = rows - 1;
+        int left = 0, right = cols - 1;
 
-            for (int i = up + 1; i <= down - 1 && res.size() < row * col; i++)
-                res.add(matrix[i][right]);
+        while (res.size() < rows * cols ){
+            for (int a = left; a <= right && res.size() < rows * cols; a++)
+                res.add(matrix[top][a]);
 
-            for (int j = right; j >= left && res.size() < row * col; j--)
-                res.add(matrix[down][j]);
+            for (int b = top + 1; b <= bottom - 1 && res.size() < rows * cols; b++)
+                res.add(matrix[b][right]);
 
-            for (int i = down - 1; i >= up + 1 && res.size() < row * col; i--)
-                res.add(matrix[i][left]);
+            for (int c = right; c >= left && res.size() < rows * cols; c--)
+                res.add(matrix[bottom][c]);
 
-            left++; right--; up++; down--;
+            for (int d = bottom - 1; d >=top + 1 && res.size() < rows * cols; d--)
+                res.add(matrix[d][left]);
+
+
+
+
+
+            left++; right--; top++; bottom--;
         }
         return res;
     }
