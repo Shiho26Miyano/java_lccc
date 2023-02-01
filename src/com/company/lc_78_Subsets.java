@@ -20,7 +20,6 @@ public class lc_78_Subsets {
             curr.remove(curr.size() - 1);
         }
     }
-
     public List<List<Integer>> subsets(int[] nums) {
         n = nums.length;
         for (k = 0; k < n + 1; ++k) {
