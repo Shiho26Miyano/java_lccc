@@ -5,7 +5,6 @@ import java.util.*;
 public class lc_78_Subsets {
     List<List<Integer>> output = new ArrayList();
     int n, k;
-
     public void backtrack(int first, ArrayList<Integer> curr, int[] nums) {
         // if the combination is done
         if (curr.size() == k) {
