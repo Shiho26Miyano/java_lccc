@@ -13,7 +13,6 @@ public class lc_78_Subsets {
             return;
         }
 
-
         for (int i = first; i < n; i++){
             // add i into the current combination
             curr.add(nums[i]);
