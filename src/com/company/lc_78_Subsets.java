@@ -6,7 +6,7 @@ import java.util.*;
 // If the solution candidate turns to be not a solution (or at least not the last one),
 // backtracking algorithm discards it by making some changes on the previous step, i.e. backtracks and then try again.
 
-// to do
+// to do: 
 // define a backtrack function backtrack(first, curr_combination, nums arraylist)
 // if the current combination is done, we will add the combination to the final output
 // otherwise, we will iterate over the idexes i from first to the length of the entire sequence n
