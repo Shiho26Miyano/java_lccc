@@ -15,3 +15,5 @@ public class myPratice_1 {
         System.out.println((result));
     }
 }
+
+
