@@ -16,4 +16,3 @@ public class myPratice_1 {
     }
 }
 
-
