@@ -36,6 +36,7 @@ public class lc_78_Subsets {
     }
     public List<List<Integer>> subsets(int[] nums){
         n = nums.length;
+        // otherwise, we will iterate over the idexes i from first to the length of the entire sequence n; k is the iteration^
         for (k = 0; k < n + 1; k++){
             backtrack(0, new ArrayList<Integer>(), nums);
         }
