@@ -2,6 +2,7 @@ package com.company;
 import java.util.*;
 
 public class lc_61_Rotate_List {
+    // recursion
     public ListNode rotateRight(ListNode head, int k) {
         if (head == null || head.next == null)  return head;
 
