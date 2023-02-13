@@ -13,7 +13,7 @@ public class lc_1265_Print_Immutable_Linked_List_in_Reverse {
         head.printValue();
     }
 
-    public void printLinkedListInInOrder(ImmutableListNode head) {
+    public void printLinkedListInInOrder1(ImmutableListNode head) {
         if (head == null) {
             return;
         }
@@ -21,6 +21,7 @@ public class lc_1265_Print_Immutable_Linked_List_in_Reverse {
         printLinkedListInReverse1(head.getNext());
 
     }
+    
     // 2 Iterative - stack
     public void printLinkedListInReverse2(ImmutableListNode head) {
         // push inserts and element into the stack, pop removes an element from the top of the stack.
@@ -32,6 +33,15 @@ public class lc_1265_Print_Immutable_Linked_List_in_Reverse {
         while (!stack.isEmpty()) {
             stack.pop().printValue();
         }
+    }
+    public void printLinkedListInInOrder2(ImmutableListNode head) {
+
+        while (head != null){
+            head.printValue();
+            head = head.getNext();
+
+        }
+
     }
 }
 
