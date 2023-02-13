@@ -3,10 +3,10 @@ import java.util.*;
 
 public class lc_61_Rotate_List {
     // recursion
-    public ListNode rotateRight(ListNode head, int k) {
+    public ListNode61 rotateRight(ListNode61 head, int k) {
         if (head == null || head.next == null)  return head;
 
-        ListNode curr = head;
+        ListNode61 curr = head;
         int length = 2;
 
         while (curr.next.next != null) {
@@ -17,7 +17,7 @@ public class lc_61_Rotate_List {
         k = k % length;
         if (k == 0) return head;
 
-        ListNode newHead = curr.next;
+        ListNode61 newHead = curr.next;
         newHead.next = head;
         curr.next = null;
 
@@ -25,3 +25,10 @@ public class lc_61_Rotate_List {
         return rotateRight(newHead, k-1);
     }
 }
+ class ListNode61 {
+     int val;
+     ListNode61 next;
+     ListNode61() {}
+     ListNode61(int val) { this.val = val; }
+     ListNode61(int val, ListNode61 next) { this.val = val; this.next = next; }
+ }
