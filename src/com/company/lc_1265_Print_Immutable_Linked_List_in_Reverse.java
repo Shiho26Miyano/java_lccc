@@ -3,6 +3,7 @@ import java.util.*;
 
 
 public class lc_1265_Print_Immutable_Linked_List_in_Reverse {
+    // I got what does mean recursion!!!! a little happiness
     //1 Iterative - recursion
     public void printLinkedListInReverse1(ImmutableListNode head) {
         if (head == null) {
