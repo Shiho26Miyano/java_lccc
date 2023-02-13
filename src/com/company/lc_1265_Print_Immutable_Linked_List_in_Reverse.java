@@ -12,6 +12,15 @@ public class lc_1265_Print_Immutable_Linked_List_in_Reverse {
         printLinkedListInReverse1(head.getNext());
         head.printValue();
     }
+
+    public void printLinkedListInInOrder(ImmutableListNode head) {
+        if (head == null) {
+            return;
+        }
+        head.printValue();
+        printLinkedListInReverse1(head.getNext());
+
+    }
     // 2 Iterative - stack
     public void printLinkedListInReverse2(ImmutableListNode head) {
         Stack<ImmutableListNode> stack = new Stack<>();
