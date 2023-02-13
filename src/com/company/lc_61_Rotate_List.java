@@ -32,3 +32,5 @@ public class lc_61_Rotate_List {
      ListNode61(int val) { this.val = val; }
      ListNode61(int val, ListNode61 next) { this.val = val; this.next = next; }
  }
+
+ 
