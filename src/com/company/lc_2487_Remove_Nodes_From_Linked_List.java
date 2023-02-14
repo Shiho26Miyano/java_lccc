@@ -6,4 +6,14 @@ public class lc_2487_Remove_Nodes_From_Linked_List {
         head.next = removeNodes(head.next);
         return head.next != null && head.val < head.next.val ? head.next : head;
     }
+
 }
+//    public ListNode removeNodes(ListNode head) {
+//        if (head != null) {
+//            head.next = removeNodes(head.next);
+//            if (head.next != null && head.val < head.next.val) {
+//                return head.next;
+//            }
+//       }
+//        return head;
+//    }
