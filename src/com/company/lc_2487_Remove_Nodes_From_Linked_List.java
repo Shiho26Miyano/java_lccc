@@ -17,3 +17,4 @@ public class lc_2487_Remove_Nodes_From_Linked_List {
 //       }
 //        return head;
 //    }
+
