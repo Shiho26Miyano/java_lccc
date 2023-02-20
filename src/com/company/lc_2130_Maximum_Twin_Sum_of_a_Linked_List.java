@@ -10,12 +10,13 @@ public class lc_2130_Maximum_Twin_Sum_of_a_Linked_List {
         return maxSum;
     }
 
-    public void traverse(ListNode node) {
-        if (node == null) return;
-        if (node.next == nodePtr) return;
+    public ListNode traverse(ListNode node) {
+        if (node == null) return null;
+        if (node.next == nodePtr) return null;
         traverse(node.next);
         maxSum = Math.max(maxSum, nodePtr.val + node.val);
         nodePtr = nodePtr.next;
+        return nodePtr;
     }
 }
 
