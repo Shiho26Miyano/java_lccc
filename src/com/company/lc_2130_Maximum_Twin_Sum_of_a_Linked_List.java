@@ -18,9 +18,7 @@ public class lc_2130_Maximum_Twin_Sum_of_a_Linked_List {
         nodePtr = nodePtr.next;
         return nodePtr;
     }
-
-
-
+    
 ////https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/solutions/2846367/java-recursive-approach-o-n-easy-to-understand-clean-solution/
 
     public int pairSum2(ListNode head) {
