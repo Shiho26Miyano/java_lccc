@@ -12,4 +12,3 @@ public class llc_1475_Final_Prices_With_a_Special_Discount_in_a_Shop {
         return A;
     }
 }
-
