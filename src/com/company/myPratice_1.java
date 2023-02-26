@@ -1,5 +1,5 @@
 package com.company;
-
+import java.util.*;
 public class myPratice_1 {
 
     public static int recurSum(int k){
@@ -14,6 +14,9 @@ public class myPratice_1 {
         int result = recurSum(5);
         System.out.println((result));
     }
+
+
+
 }
 
 
