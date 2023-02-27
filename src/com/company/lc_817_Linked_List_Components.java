@@ -1,4 +1,5 @@
 package com.company;
+import java.util.*;
 
 public class lc_817_Linked_List_Components {
     public int numComponents(ListNode head, int[] G) {
