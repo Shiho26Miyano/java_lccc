@@ -16,10 +16,7 @@ public class lc_92_Reverse_Linked_List_II {
 
         head.next = reverseBetween(head.next,m-1,n-1);
         return head;
-
     }
-
-
 
     //Reverse the n-nodes after the given head
     private ListNode reverse(ListNode head,int n){
