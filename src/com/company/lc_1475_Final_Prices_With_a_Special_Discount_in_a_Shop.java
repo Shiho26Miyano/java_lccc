@@ -1,7 +1,7 @@
 package com.company;
 import java.util.*;
 
-public class llc_1475_Final_Prices_With_a_Special_Discount_in_a_Shop {
+public class lc_1475_Final_Prices_With_a_Special_Discount_in_a_Shop {
     public int[] finalPrices(int[] prices) {
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < prices.length; i++){
