@@ -3,18 +3,18 @@ import java.util.*;
 
 public class lc_2046_Sort_Linked_List_Already_Sorted_Using_Absolute_Values {
     public ListNode sortLinkedList(ListNode head) {
-        ListNode headCpy = head, prev = head;
-        head = head.next; // move one step to avoid checking for prev != null
-        while (head != null)
-            if (head.val < 0) { // replace head
-                prev.next = head.next;
-                head.next = headCpy;
-                headCpy = head;
-                head = prev.next;
+        var node = head;
+        while (node != null && node.next != null) {
+            var next = node.next;
+            if (next.val < 0) {
+                var temp = next.next;
+                next.next = head;
+                head = next;
+                node.next = temp;
             } else {
-                prev = head;
-                head = head.next;
+                node = node.next;
             }
-        return headCpy;
+        }
+        return head;
     }
 }
