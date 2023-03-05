@@ -1,7 +1,6 @@
 package com.company;
 import java.util.*;
 
-
 public class lc_2046_Sort_Linked_List_Already_Sorted_Using_Absolute_Values {
     public ListNode sortLinkedList(ListNode head) {
         ListNode headCpy = head, prev = head;
