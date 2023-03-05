@@ -6,10 +6,10 @@ public class lc_2046_Sort_Linked_List_Already_Sorted_Using_Absolute_Values {
         var node = head;
         while (node != null && node.next != null) {
             if (node.next.val < 0) {
-                var temp = node.next.next;
+                var tempNodeNextNext = node.next.next;
                 node.next.next = head;
                 head = node.next;
-                node.next = temp;
+                node.next = tempNodeNextNext;
             } else {
                 node = node.next;
             }
