@@ -3,7 +3,6 @@ import java.util.*;
 public class lc_324_Wiggle_Sort_II {
     public void wiggleSort(int[] nums) {
         int n=nums.length-1;
-        //copy values to new array
         int[] newarr=Arrays.copyOf(nums,nums.length);
         //sort new array
         Arrays.sort(newarr);
@@ -18,3 +17,4 @@ public class lc_324_Wiggle_Sort_II {
             nums[i]=newarr[n--];
     }
 }
+
