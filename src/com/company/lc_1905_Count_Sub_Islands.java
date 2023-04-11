@@ -23,3 +23,4 @@ public class lc_1905_Count_Sub_Islands {
         return res & B[i][j];
     }
 }
+
