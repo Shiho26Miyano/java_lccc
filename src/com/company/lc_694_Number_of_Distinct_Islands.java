@@ -2,6 +2,7 @@ package com.company;
 import java.util.*;
 
 public class lc_694_Number_of_Distinct_Islands {
+    //https://www.youtube.com/watch?v=c1ZxUOHlulo
     // X = start
     // O = out of bounds Or water
     // U = up
