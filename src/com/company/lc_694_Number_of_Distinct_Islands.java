@@ -24,7 +24,6 @@ public class lc_694_Number_of_Distinct_Islands {
             }
         }
         return set.size();
-
     }
 
     private void dfs(int[][] grid, int i, int j, StringBuilder sb, String direction){
