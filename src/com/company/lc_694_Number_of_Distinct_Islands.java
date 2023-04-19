@@ -25,7 +25,6 @@ public class lc_694_Number_of_Distinct_Islands {
         }
         return set.size();
     }
-
     private void dfs(int[][] grid, int i, int j, StringBuilder sb, String direction){
         if (i < 0 || i == grid.length ||j < 0 || j==grid[i].length || grid[i][j] == 0) return;
 
