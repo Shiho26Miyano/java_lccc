@@ -37,3 +37,5 @@ public class lc_694_Number_of_Distinct_Islands {
         sb.append("O");
     }
 }
+
+
