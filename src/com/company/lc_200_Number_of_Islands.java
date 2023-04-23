@@ -6,32 +6,30 @@ import java.util.*;
 // This number would be the nubmer of islands since each DFS starting at some root identifies an island
 
 public class lc_200_Number_of_Islands {
-    void dfs(char[][] M, int r, int c) {
-
-        if (r < 0 || c < 0 || r >= M.length || c >= M[0].length || M[r][c] == '0') {
-            return;
-        }
-
-        M[r][c] = '0';
-        dfs(M, r - 1, c);
-        dfs(M, r + 1, c);
-        dfs(M, r, c - 1);
-        dfs(M, r, c + 1);
-    }
-    public int numIslands(char[][] M) {
-        if(M == null || M.length == 0){
-            return 0;
-        }
+    public int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0) return 0;
         int count = 0;
-        for (int r = 0; r < M.length; r++){
-            for (int c = 0 ; c < M[0].length; c++){
-                if(M[r][c] == '1'){
-                    dfs(M,r,c);
+        for (int i = 0; i < grid.length; i++){
+            for (int j = 0; j < grid[0].length; j++){
+                if(grid[i][j] == '1'){
+                    dfs(grid, i, j);
                     count++;
                 }
             }
         }
-
         return count;
+
+    }
+
+    private void dfs (char[][] grid, int i, int j){
+        if(i < 0 || i == grid.length || j < 0|| j == grid[0].length || grid[i][j] == '0') return;
+
+        grid[i][j] = '0';
+        dfs(grid, i - 1, j);
+        dfs(grid, i + 1, j);
+        dfs(grid, i, j - 1);
+        dfs(grid, i, j + 1);
+
+
     }
 }

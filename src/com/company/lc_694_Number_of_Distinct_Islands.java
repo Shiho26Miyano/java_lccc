@@ -34,7 +34,7 @@ public class lc_694_Number_of_Distinct_Islands {
         dfs(grid, i+1, j, sb, "D");
         dfs(grid, i, j-1, sb, "L");
         dfs(grid, i, j+1 , sb, "R");
-        
+
         sb.append("O");
     }
 }
