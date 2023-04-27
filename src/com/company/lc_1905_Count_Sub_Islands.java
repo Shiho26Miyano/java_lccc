@@ -26,6 +26,5 @@ public class lc_1905_Count_Sub_Islands {
         dfs(grid1, grid2, i + 1, j);
         dfs(grid1, grid2, i, j + 1);
         dfs(grid1, grid2, i, j - 1);
-
     }
 }
