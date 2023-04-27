@@ -1,6 +1,6 @@
 package com.company;
 import java.util.*;
-public class Lc_88_Merge_Sorted_Array {
+public class lc_88_Merge_Sorted_Array {
     public static int[] merge(int[] nums1, int m, int[] nums2, int n) {
         for (int i = 0; i < n; i++) {
             nums1[i + m] = nums2[i];
