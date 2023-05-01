@@ -27,7 +27,7 @@ public class lc_15_3Sum {
         }
         return res;
     }
-    
+
 
     public static void main(String[] args){
         //String s = "addccggazfeezddh";
@@ -37,5 +37,4 @@ public class lc_15_3Sum {
         List<List<Integer>> t = threeSum(nums2);
         System.out.println(t);
     }
-
 }
