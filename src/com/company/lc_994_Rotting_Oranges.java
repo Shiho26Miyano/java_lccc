@@ -16,7 +16,6 @@ public class lc_994_Rotting_Oranges {
                 else if (elem < 0) maxMinutes = Math.min(elem, maxMinutes);
             }
         }
-
         return maxMinutes == 0 ? 0 : -maxMinutes - 1;
     }
 
