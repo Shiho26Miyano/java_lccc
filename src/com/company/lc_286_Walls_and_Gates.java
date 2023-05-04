@@ -11,7 +11,6 @@ public class lc_286_Walls_and_Gates {
             }
         }
     }
-
     private void dfs(int[][] rooms, int i, int j, int dist) {
         if(i < 0 || i >= rooms.length || j < 0 || j >= rooms[0].length || rooms[i][j] <= dist && dist != 0) return;
         rooms[i][j] = dist; //Only case left: INF
