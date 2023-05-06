@@ -20,3 +20,4 @@ public class lc_286_Walls_and_Gates {
         dfs(rooms, i, j - 1, dist + 1);
     }
 }
+
