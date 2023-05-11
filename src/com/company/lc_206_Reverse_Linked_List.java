@@ -3,15 +3,15 @@ import java.util.*;
 
 public class lc_206_Reverse_Linked_List {
     public ListNode reverseList(ListNode head) {
-        ListNode preSetTail = null;
+        ListNode preSetTailMove = null;
         ListNode curr = head;
         while(curr != null){
             ListNode oldNext = curr.next;
-            curr.next = preSetTail;
-            preSetTail = curr;
+            curr.next = preSetTailMove;
+            preSetTailMove = curr;
             curr = oldNext;
         }
-        return preSetTail;
+        return preSetTailMove;
     }
     public class ListNode {
         int val;
