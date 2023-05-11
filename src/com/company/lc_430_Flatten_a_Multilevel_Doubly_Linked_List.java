@@ -1,7 +1,6 @@
 package com.company;
 
 public class lc_430_Flatten_a_Multilevel_Doubly_Linked_List {
-
     Node430 prev = null;
 
     public Node430 flatten(Node430 head) {
