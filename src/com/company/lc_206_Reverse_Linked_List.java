@@ -21,5 +21,3 @@ public class lc_206_Reverse_Linked_List {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 }
-
-
