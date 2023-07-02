@@ -14,7 +14,7 @@ public class lc_206_Reverse_Linked_List {
             curr = previousNext;
         }
         return futureTail;
-        
+
     }
     public class ListNode {
         int val;
