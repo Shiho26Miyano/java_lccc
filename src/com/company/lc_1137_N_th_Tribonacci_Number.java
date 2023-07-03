@@ -1,7 +1,7 @@
 package com.company;
 
 public class lc_1137_N_th_Tribonacci_Number {
-    /////////////method 1 recurrsion 
+    /////////////method 1 recurrsion
     public int tribonacci(int n) {
         return helper (n, 0, 1, 1);
 

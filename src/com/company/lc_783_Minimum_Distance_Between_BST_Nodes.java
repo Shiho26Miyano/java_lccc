@@ -1,24 +1,12 @@
 package com.company;
 
 public class lc_783_Minimum_Distance_Between_BST_Nodes {
-    public int minDiffInBST(TreeNode root)
-    {
-        inorder(root);
-        return ans;
-    }
-
-    private int ans = Integer.MAX_VALUE;
-    private Integer pred = null;
-
-    private void inorder(TreeNode root)
-    {
-        if (root == null)
-            return;
-
-        inorder(root.left);
-        if (pred != null)
-            ans = Math.min(ans, root.val - pred);
-        pred = root.val;
-        inorder(root.right);
+    Integer res = Integer.MAX_VALUE, pre = null;
+    public int minDiffInBST(TreeNode root) {
+        if (root.left != null) minDiffInBST(root.left);
+        if (pre != null) res = Math.min(res, root.val - pre);
+        pre = root.val;
+        if (root.right != null) minDiffInBST(root.right);
+        return res;
     }
 }
