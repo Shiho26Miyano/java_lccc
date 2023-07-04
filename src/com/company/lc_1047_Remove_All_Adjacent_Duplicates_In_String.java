@@ -24,8 +24,6 @@ public class lc_1047_Remove_All_Adjacent_Duplicates_In_String {
         return sb.toString();
     }
 
-
-
     public static void main(String[] args){
         String s = "addccggazfeezddh";
         //int[] nums2 = new int[]{2,2,3};
