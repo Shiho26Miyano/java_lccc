@@ -2,12 +2,29 @@ package com.company;
 
 public class lc_783_Minimum_Distance_Between_BST_Nodes {
     // recursion
-    Integer res = Integer.MAX_VALUE, pre = null;
+    // List to store the tree nodes in the inorder traversal.
+    List<Integer> inorderNodes = new ArrayList<>();
+
+    void inorderTraversal(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        inorderTraversal(root.left);
+        // Store the nodes in the list.
+        inorderNodes.add(root.val);
+        inorderTraversal(root.right);
+    }
+
     public int minDiffInBST(TreeNode root) {
-        if (root.left != null) minDiffInBST(root.left);
-        if (pre != null) res = Math.min(res, root.val - pre);
-        pre = root.val;
-        if (root.right != null) minDiffInBST(root.right);
-        return res;
+        inorderTraversal(root);
+
+        int minDistance = Integer.MAX_VALUE;
+        // Find the diff between every two consecutive values in the list.
+        for (int i = 1; i < inorderNodes.size(); i++) {
+            minDistance = Math.min(minDistance, inorderNodes.get(i) - inorderNodes.get(i-1));
+        }
+
+        return minDistance;
     }
 }
