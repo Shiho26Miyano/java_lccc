@@ -3,18 +3,23 @@ import java.util.*;
 
 public class lc_167_Two_sum_II_Input_Array_is_sorted {
     public static int[] twoSum(int[] numbers, int target) {
-        int lo = 0, hi = numbers.length - 1;
-        while (lo < hi) {
-            int curSum = numbers[lo] + numbers[hi];
-            if (curSum == target) {
-                return new int[]{lo + 1, hi + 1};
-            } else if (curSum > target) {
-                hi--;
-            } else {
-                lo++;
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < numbers.length; i++){
+            System.out.println(numbers[i]);
+            int complement = target - numbers[i];
+
+
+            if (map.containsKey(complement)){
+                return new int[]{map.get(complement) + 1, i+1};
             }
+            map.put(numbers[i], i);
+
         }
-        return new int[]{-1, -1};
+        System.out.println(map);
+        return null;
+
+
     }
 
 
