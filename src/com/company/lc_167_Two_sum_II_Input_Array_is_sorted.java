@@ -1,5 +1,6 @@
 package com.company;
 import java.util.*;
+//20230716
 
 public class lc_167_Two_sum_II_Input_Array_is_sorted {
     public static int[] twoSum(int[] numbers, int target) {
@@ -11,14 +12,13 @@ public class lc_167_Two_sum_II_Input_Array_is_sorted {
 
 
             if (map.containsKey(complement)){
-                return new int[]{map.get(complement) , i+1};
+                return new int[]{map.get(complement) + 1 , i+1};
             }
-            map.put(numbers[i], i + 1);
+            map.put(numbers[i], i);
 
         }
         System.out.println(map);
         return null;
-
 
     }
 
