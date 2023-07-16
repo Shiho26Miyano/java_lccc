@@ -1,5 +1,7 @@
 package com.company;
 import java.util.*;
+//20230716
+
 public class lc_242_valid_anagram {
 
     public static boolean isAnagram(String s, String t) {
@@ -13,6 +15,22 @@ public class lc_242_valid_anagram {
         return Arrays.equals(str1, str2);
     }
 
+    public boolean isAnagram_hash(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        int[] counter = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            counter[s.charAt(i) - 'a']++;
+            counter[t.charAt(i) - 'a']--;
+        }
+        for (int count : counter) {
+            if (count != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     public static void main(String[] args){
         String s = "cat";
