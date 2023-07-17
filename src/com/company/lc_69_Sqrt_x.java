@@ -7,16 +7,18 @@ public class lc_69_Sqrt_x {
         if (x < 2) return x;
 
         long num;
-        int pivot, left = 2, right = x / 2;
-        while (left <= right) {
-            pivot = left + (right - left) / 2;
-            num = (long)pivot * pivot;
-            if (num > x) right = pivot - 1;
-            else if (num < x) left = pivot + 1;
-            else return pivot;
-        }
+        int m, left = 2, right = x / 2;
 
+        while (left <= right){
+            m = left + (right - left) / 2;
+            if (m > x / m){
+                right = m - 1;
+            }else if (m < x / m){
+                left = m + 1;
+            } else return m;
+        }
         return right;
+
     }
 
 
