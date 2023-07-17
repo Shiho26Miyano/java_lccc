@@ -1,31 +1,22 @@
 package com.company;
 import java.util.*;
-
+//20230716
 public class lc_69_Sqrt_x {
 
     public static int mySqrt(int x) {
+        if (x < 2) return x;
 
-        if(x==0 || x==1)
-            return x;
-
-        int start=1;
-        int end=x/2;
-        int ans=0;
-
-
-
-        while(start<=end)
-        {
-            int mid=start+(end-start)/2;
-
-            if(mid<=x/mid)          //To escape the INT OVERFLOW
-            {ans=mid;
-                start=mid+1;}
-            else
-                end=mid-1;
+        long num;
+        int pivot, left = 2, right = x / 2;
+        while (left <= right) {
+            pivot = left + (right - left) / 2;
+            num = (long)pivot * pivot;
+            if (num > x) right = pivot - 1;
+            else if (num < x) left = pivot + 1;
+            else return pivot;
         }
-        return ans;
 
+        return right;
     }
 
 
