@@ -3,23 +3,22 @@ import java.io.*;
 import java.util.*;
 // The charAt() method returns the character at the specified index in a string.
 // public char charAt(int index)
+
+//20230718
 public class lc_20_Valid_Parentheses {
     public static boolean isValid(String s) {
-        Stack<Character> run_stack = new Stack<Character>();
-        HashMap<Character, Character> mappings = new HashMap<Character, Character>();
-        mappings.put('(', ')');
-        mappings.put('{', '}');
-        mappings.put('[', ']');
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (mappings.containsKey(ch)) {
-                run_stack.push(ch);
-            }
-            else if (run_stack.isEmpty() || mappings.get(run_stack.pop()) != ch) {
+        Stack<Character> stack = new Stack<Character>();
+        for (char c : s.toCharArray()) {
+            if (c == '(')
+                stack.push(')');
+            else if (c == '{')
+                stack.push('}');
+            else if (c == '[')
+                stack.push(']');
+            else if (stack.isEmpty() || stack.pop() != c)
                 return false;
-            }
         }
-        return run_stack.isEmpty();
+        return stack.isEmpty();
 
     }
 
