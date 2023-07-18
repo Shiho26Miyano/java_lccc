@@ -5,23 +5,17 @@ import java.util.*;
 
 public class lc_349_Intersection_of_Two_Arrays {
     public static int[] intersection(int[] nums1, int[] nums2) {
-        HashSet<Integer> set = new HashSet();
-        HashSet<Integer> res = new HashSet();
+        HashSet<Integer> set1 = new HashSet<Integer>();
+        for (Integer n : nums1) set1.add(n);
+        HashSet<Integer> set2 = new HashSet<Integer>();
+        for (Integer n : nums2) set2.add(n);
 
-        for(int itr = 0; itr < nums1.length; itr++){
-            set.add(nums1[itr]);
-        }
+        set1.retainAll(set2);
 
-        for(int itr = 0; itr < nums2.length; itr++){
-            if(set.contains(nums2[itr])) res.add(nums2[itr]);
-        }
-
-        int[] arr = new int[res.size()];
-        int jtr = 0;
-        for (int itr : res)
-            arr[jtr++] = itr;
-
-        return arr;
+        int [] output = new int[set1.size()];
+        int idx = 0;
+        for (Integer s : set1) output[idx++] = s;
+        return output;
     }
 
 
