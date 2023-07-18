@@ -7,8 +7,8 @@ import java.util.*;
 //20230718
 public class lc_20_Valid_Parentheses {
     public static boolean isValid(String s) {
-        Stack<Character> stack = new Stack<Character>();
-        for (char c : s.toCharArray()) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()){
             if (c == '(')
                 stack.push(')');
             else if (c == '{')
@@ -19,7 +19,6 @@ public class lc_20_Valid_Parentheses {
                 return false;
         }
         return stack.isEmpty();
-
     }
 
     public static void main(String[] args){
