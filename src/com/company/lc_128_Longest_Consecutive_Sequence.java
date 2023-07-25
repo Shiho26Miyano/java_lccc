@@ -22,7 +22,6 @@ public class lc_128_Longest_Consecutive_Sequence {
                 longestStreak = Math.max(longestStreak, currStreak);
             }
         }
-
         return longestStreak;
     }
     public static void main(String[] args){
