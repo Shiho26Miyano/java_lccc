@@ -18,7 +18,6 @@ public class lc_128_Longest_Consecutive_Sequence {
                     currNum++;
                     currStreak++;
                 }
-
                 longestStreak = Math.max(longestStreak, currStreak);
             }
         }
