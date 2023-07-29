@@ -12,6 +12,7 @@ public class lc_128_Longest_Consecutive_Sequence {
             //loop through the sorted set, if set not contains previous element,
             //start from this current element, currMaxLen is 1
             //from current element, count how many currNum++ be found in set.
+            //HashSet is not ordered, TreeSet is ordered, HashSet is faster than TreeSet.
             if (!set.contains(setItem - 1)){
                 int currNum = setItem;
                 int currMaxLen = 1;
