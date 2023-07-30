@@ -4,20 +4,16 @@ import java.util.*;
 public class lc_215_Kth_Largest_Element_in_an_Array {
     //method 1 minHeap
     public static int findKthLargest(int[] nums, int k) {
-        //minHeap
-        // init heap 'the smallest element first'
-        PriorityQueue<Integer> heap =
-                new PriorityQueue<Integer>((n1, n2) -> n1 - n2);
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a,b) -> a - b);
+        for (int n : nums){
+            pq.add(n);
+            if (pq.size() > k){
+                pq.poll();
+            }
 
-        // keep k largest elements in the heap
-        for (int n: nums) {
-            heap.add(n);
-            if (heap.size() > k)
-                heap.poll();
         }
+        return pq.poll();
 
-        // output
-        return heap.poll();
     }
     // method 2 maxHeap
     public static int findKthLargest_2(int[] nums, int k) {
