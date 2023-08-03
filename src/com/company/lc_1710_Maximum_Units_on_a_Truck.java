@@ -2,14 +2,11 @@ package com.company;
 import java.util.*;
 
 //Time Complexity: O(nlogn)
-
+//Space complexity: O(n)
 public class lc_1710_Maximum_Units_on_a_Truck {
 
     public static int maximumUnits(int[][] boxTypes, int truckSize) {
         PriorityQueue<int[]> myQueue = new PriorityQueue<>((a, b)->b[1] - a[1]);
-        for (int[] array: boxTypes){
-            System.out.println(Arrays.toString(array));
-        }
         myQueue.addAll(Arrays.asList(boxTypes));
         int unitCount = 0;
         while (!myQueue.isEmpty() && truckSize >=0 ) {
