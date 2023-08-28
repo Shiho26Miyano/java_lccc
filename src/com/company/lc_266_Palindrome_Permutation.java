@@ -1,5 +1,6 @@
 package com.company;
 import java.util.*;
+
 public class lc_266_Palindrome_Permutation {
     public static boolean canPermutePalindrome(String s) {
         HashMap < Character, Integer > map = new HashMap < > ();
