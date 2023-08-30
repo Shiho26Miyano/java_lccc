@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 public class lc_266_Palindrome_Permutation {
     public static boolean canPermutePalindrome(String s) {
-        HashMap < Character, Integer > map = new HashMap < > ();
+        HashMap < Character, Integer > map = new HashMap <> ();
         for (int i = 0; i < s.length(); i++) {
             map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
         }
@@ -13,9 +13,9 @@ public class lc_266_Palindrome_Permutation {
         return count <= 1;
     }
     public static void main(String[] args){
-        int[] intArray = new int[]{2,2,5,2,6,3,4,5,6,7};
+        int[] intArray = new int[]{2,3,2};
         int target = 5;
-        String s = "code";
+        String s = "cdc";
         boolean result = canPermutePalindrome(s);
         System.out.println(result);
     }
