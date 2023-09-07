@@ -3,20 +3,20 @@ import java.util.*;
 public class lc_266_Palindrome_Permutation {
     // solution 1: array
     public static boolean canPermutePalindrome(String s) {
-        if (s == null || s.length() == 0) {
-            return false;
-        }
+        if(s.length() == 1)
+            return true;
 
-        int[] chars = new int[128];
-        for (char c : s.toCharArray()) {
-            chars[(int) c]++;
-        }
+        int[] freq = new int[26];
+
+        for(char i : s.toCharArray())
+            freq[i-'a']++;
 
         int count = 0;
-        for (int i : chars) {
-            count += i % 2;
-        }
-        return count <= 1;
+        for(int i : freq)
+            if(i%2 == 1)
+                count++;
+
+        return count <=1 ;
     }
     // solution 2: hashmap
     public boolean canPermutePalindrome2(String s) {
