@@ -21,12 +21,14 @@ public class lc_266_Palindrome_Permutation {
     // solution 2: hashmap
     public boolean canPermutePalindrome2(String s) {
         Map<Character, Integer> map = new HashMap();
-        for(char c : s.toCharArray()){
-            if(map.containsKey(c)) map.remove(c);
+
+        for (char c : s.toCharArray()){
+            if (map.containsKey(c)) map.remove(c);
             else map.put(c, 1);
         }
-        if(map.size() > 1) return false;
-        else return true;
+        if (map.size() > 1) return false;
+        return true;
+
     }
 
     public static void main(String[] args){
