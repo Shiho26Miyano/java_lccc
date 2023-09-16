@@ -18,7 +18,6 @@ public class lc_266_Palindrome_Permutation {
 
         return count <=1 ;
     }
-    
     // solution 2: hashmap
     public boolean canPermutePalindrome2(String s) {
         Map<Character, Integer> map = new HashMap();
