@@ -1,6 +1,7 @@
 package com.company;
 import java.util.*;
-
+// method 1 left close, right close
+// method 2 left close, right open, then left < right, right = nums.length
 public class lc_704_Binary_search {
     public static int search(int[] nums, int target) {
         int pivot, left = 0, right = nums.length - 1;
