@@ -14,13 +14,9 @@ public class lc_704_Binary_search {
         return -1;
     }
 
-
     public static void main(String[] args){
        // String x = "00110011";
         int[] intArray = new int[]{2,2,5,2,6,3,4,5,6,7};
         int target = 5;
-        System.out.println(search(intArray, target));
-
-
     }
 }
