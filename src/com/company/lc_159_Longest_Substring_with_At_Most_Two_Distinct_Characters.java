@@ -4,23 +4,21 @@ import java.util.*;
 public class lc_159_Longest_Substring_with_At_Most_Two_Distinct_Characters {
     public int lengthOfLongestSubstringTwoDistinct(String s) {
         Map<Character, Integer> map = new HashMap<>();
-        int left = 0;
-        int best = 0;
-        for(int i = 0; i < s.length(); i++) {
-            // character at the right pointer
+        int startIx = 0;
+        int bestSubLen = 0;
+        for (int i = 0; i < s.length();i++){
             char c = s.charAt(i);
             map.put(c, map.getOrDefault(c, 0) + 1);
-            // make sure map size is valid, no need to check left pointer less than s.length()
-            while (map.size() > 2) {
-                char leftChar = s.charAt(left);
-                map.put(leftChar, map.get(leftChar) - 1);
-                if (map.get(leftChar) == 0) {
-                    map.remove(leftChar);
+            while (map.size() > 2){
+                char startChar = s.charAt(startIx);
+                map.put(startChar, map.get(startChar) - 1);
+                if (map.get(startChar) == 0){
+                    map.remove(startChar);
                 }
-                left++;
+                startIx++;
             }
-            best = Math.max(best, i - left + 1);
+            bestSubLen = Math.max(bestSubLen, i - startIx + 1);
         }
-        return best;
+        return bestSubLen;
     }
 }
