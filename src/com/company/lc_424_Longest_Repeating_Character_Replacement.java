@@ -28,7 +28,6 @@ public class lc_424_Longest_Repeating_Character_Replacement {
             longest = Math.max(longest, end - start + 1);
         }
         return longest;
-
     }
     public static void main(String[] args) {
         int[] intArray = new int[]{1, 3, 5, 6, 7};
