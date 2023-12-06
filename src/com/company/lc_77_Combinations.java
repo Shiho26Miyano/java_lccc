@@ -1,4 +1,5 @@
 package com.company;
+import java.util.*;
 
 public class lc_77_Combinations {
     public List<List<Integer>> combine(int n, int k) {
