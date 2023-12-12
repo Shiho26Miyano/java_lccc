@@ -32,5 +32,40 @@ public class lc_424_Longest_Repeating_Character_Replacement {
         String s = "ABAB";
         int result = characterReplacement(s, 2);
         System.out.println(result);
+        // test out
+        int[] arr = {2, 1, 5, 1, 3, 2};
+        int k = 3;
+        int result2 = maxSumSubarray(arr, k);
+        System.out.println("Maximum sum of a subarray of size " + k + " is: " + result2);
     }
+    //chatgpt sliding window example
+    public static int maxSumSubarray(int[] arr, int k) {
+        int maxSum = Integer.MIN_VALUE; // Initialize the maximum sum with the smallest possible integer
+        int currentSum = 0; // Initialize the current sum
+
+        // Initialize the sliding window
+        for (int i = 0; i < k; i++) {
+            currentSum += arr[i];
+        }
+
+        // Slide the window through the array
+        for (int i = k; i < arr.length; i++) {
+            // Update the maximum sum if the current sum is greater
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+
+            // Add the next element to the current sum and remove the first element in the window
+            currentSum += arr[i] - arr[i - k];
+        }
+
+        // Check one more time after the loop ends in case the maximum sum ends at the last subarray
+        if (currentSum > maxSum) {
+            maxSum = currentSum;
+        }
+
+        return maxSum;
+    }
+
+
 }
