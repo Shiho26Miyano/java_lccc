@@ -26,18 +26,7 @@ public class lc_424_Longest_Repeating_Character_Replacement {
         }
         return longest;
     }
-    public static void main(String[] args) {
-        int[] intArray = new int[]{1, 3, 5, 6, 7};
-        int target = 6;
-        String s = "ABAB";
-        int result = characterReplacement(s, 2);
-        System.out.println(result);
-        // test out
-        int[] arr = {2, 1, 5, 1, 3, 2};
-        int k = 3;
-        int result2 = maxSumSubarray(arr, k);
-        System.out.println("Maximum sum of a subarray of size " + k + " is: " + result2);
-    }
+
     //chatgpt sliding window example
     public static int maxSumSubarray(int[] arr, int k) {
         int maxSum = Integer.MIN_VALUE; // Initialize the maximum sum with the smallest possible integer
@@ -67,5 +56,18 @@ public class lc_424_Longest_Repeating_Character_Replacement {
         return maxSum;
     }
 
+
+    public static void main(String[] args) {
+        int[] intArray = new int[]{1, 3, 5, 6, 7};
+        int target = 6;
+        String s = "ABAB";
+        int result = characterReplacement(s, 2);
+        System.out.println(result);
+        // test out
+        int[] arr = {2, 1, 5, 1, 3, 2};
+        int k = 3;
+        int result2 = maxSumSubarray(arr, k);
+        System.out.println("Maximum sum of a subarray of size " + k + " is: " + result2);
+    }
 
 }
