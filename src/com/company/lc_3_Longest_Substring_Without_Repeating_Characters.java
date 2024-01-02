@@ -3,7 +3,7 @@ import java.util.*;
 
 public class lc_3_Longest_Substring_Without_Repeating_Characters {
     // method 1, put {end: count} before cleaning, then update
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         int startIndex = 0;
         int longest = 0;
 
