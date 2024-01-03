@@ -4,21 +4,23 @@ public class lc_209_Minimum_Size_Subarray_Sum {
     public int minSubArrayLen(int target, int[] nums) {
         if (nums == null || nums.length == 0)
             return 0;
-        int start = 0;
-        int sum = 0;
-        int minLength = Integer.MAX_VALUE;
-        for (int end = 0; end < nums.length; end++ ){
-            sum += nums[end];
-            while(sum >= target){
-                int subLength = end - start + 1;
-                minLength = minLength > subLength ? subLength : minLength;
-                sum -= nums[start];
-                start++;
+        int startIndex = 0;
+        int minSubSize = Integer.MAX_VALUE;
+        int sumSub = 0;
+
+        for (int endIndex = startIndex; endIndex < nums.length; endIndex++){
+            int end = nums[endIndex];
+            sumSub = sumSub + end;
+
+            while(sumSub >= target){
+                minSubSize = Math.min(minSubSize, endIndex - startIndex + 1);
+                sumSub = sumSub - nums[startIndex];
+                startIndex++;
             }
 
 
         }
-        return minLength == Integer.MAX_VALUE ? 0 : minLength;
+        return minSubSize != Integer.MAX_VALUE ?  minSubSize : 0 ;
 
     }
 }
