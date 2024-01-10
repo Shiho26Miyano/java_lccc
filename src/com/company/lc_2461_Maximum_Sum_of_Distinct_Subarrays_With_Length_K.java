@@ -38,7 +38,6 @@ public class lc_2461_Maximum_Sum_of_Distinct_Subarrays_With_Length_K {
         int startIndex  = 0;
         long sumSub = 0;
         long maxSumSub = Integer.MIN_VALUE;
-
         HashMap<Integer, Integer> map = new HashMap<>();
 
         for (int endIndex = 0; endIndex < nums.length; endIndex++){
