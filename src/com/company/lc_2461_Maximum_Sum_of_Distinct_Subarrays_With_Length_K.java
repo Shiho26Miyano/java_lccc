@@ -44,7 +44,6 @@ public class lc_2461_Maximum_Sum_of_Distinct_Subarrays_With_Length_K {
             int end = nums[endIndex];
             sumSub += end;
             map.put(end, map.getOrDefault(end, 0) + 1);
-
             while(endIndex - startIndex + 1 > k || (map.getOrDefault(end, 0) > 1)){
                 int start = nums[startIndex];
                 sumSub -= start;
