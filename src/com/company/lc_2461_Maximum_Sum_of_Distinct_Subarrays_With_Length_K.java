@@ -51,7 +51,6 @@ public class lc_2461_Maximum_Sum_of_Distinct_Subarrays_With_Length_K {
                 if (map.get(start) == 0){
                     map.remove(start);
                 }
-
                 startIndex++;
 
             }
