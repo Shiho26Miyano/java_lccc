@@ -5,11 +5,12 @@ public class lc_2537_Count_the_Number_of_Good_Subarrays {
         long res = 0L;
         Map<Integer, Integer> count = new HashMap<>();
         for(int i = 0, j = 0; j < A.length; ++j){
-            k -= count.getOrDefault(A[j],0);
+            k = k - count.getOrDefault(A[j],0);
             count.put(A[j],count.getOrDefault(A[j],0)+1);
             while(k <= 0){
                 count.put(A[i],count.get(A[i])-1);
-                k += count.get(A[i++]);
+                k = k + count.get(A[i]);
+                i++;
             }
             res += i;
         }
