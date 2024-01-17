@@ -24,7 +24,6 @@ public class lc_2537_Count_the_Number_of_Good_Subarrays {
         for (int i=0, j = 0; j<nums.length; j++) {
             count += map.getOrDefault(nums[j], 0);
             map.put(nums[j], map.getOrDefault(nums[j], 0) + 1);
-
             while (count >= k) {
                 ans+= nums.length - j;
                 map.put(nums[i],map.get(nums[i])-1);
