@@ -11,7 +11,6 @@ public class lc_862_Shortest_Subarray_with_Sum_at_Least_K {
         long[] prefixSum = new long[nLen + 1];
         for(int i=0; i < nLen; i++)
             prefixSum[i+1] = prefixSum[i] + nums[i];
-
         // Initialize the Deque for storing the starting indices
         Deque<Integer> startIdxs = new ArrayDeque<>();
 
