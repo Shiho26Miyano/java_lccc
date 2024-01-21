@@ -3,7 +3,6 @@ import java.util.*;
 
 public class lc_862_Shortest_Subarray_with_Sum_at_Least_K {
     public int shortestSubarray(int[] nums, int k) {
-
         int nLen = nums.length;
         int shortest = nLen + 1;
 
