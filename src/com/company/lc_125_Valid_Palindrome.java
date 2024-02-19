@@ -12,7 +12,6 @@ public class lc_125_Valid_Palindrome {
                 System.out.println(s.charAt(j));
                 j--;
             }
-
             if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j)))
                 return false;
         }
